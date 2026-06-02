@@ -13,7 +13,7 @@ public class IntroScreen extends World
      * 
      */
     public IntroScreen() {
-        super(1200, 800, 1); 
+        super(800, 600, 1); 
         //setBackground(new GreenfootImage("images/Background/StartWorld.png"));
         //startButton = new Button("Start", 150);
         //addObject(startButton, getWidth() / 2, getHeight() / 5 * 4 + 20);
