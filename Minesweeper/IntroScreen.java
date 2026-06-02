@@ -14,18 +14,15 @@ public class IntroScreen extends World
      */
     public IntroScreen() {
         super(1200, 800, 1); 
-        //setBackground(new GreenfootImage("images/Background/StartWorld.png"));
-        //startButton = new Button("Start", 150);
-        //addObject(startButton, getWidth() / 2, getHeight() / 5 * 4 + 20);
-        //Greenfoot.setWorld(this);
+        
+        //set background image
+        
+        //add menu buttons to the screen
+        addObject(new MenuButton(MenuButton.START), 600, 500);
+        addObject(new MenuButton(MenuButton.SOUND), 1150, 50);
     }
     
     public void act() {
-        //if (Greenfoot.mouseClicked(startButton)) {
-            //stopped();
-            //Greenfoot.setWorld(new StoryWorld()); 
-        //}
+        //MenuButton class handles the clicks! :)
     }
-    
-    
 }
