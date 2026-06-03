@@ -14,7 +14,7 @@ public class IntroScreen extends World
      */
     public IntroScreen() {
         super(800, 600, 1); 
-        //setBackground(new GreenfootImage("images/Background/StartWorld.png"));
+        setBackground(new GreenfootImage("introScreen.png"));
         //startButton = new Button("Start", 150);
         //addObject(startButton, getWidth() / 2, getHeight() / 5 * 4 + 20);
         //Greenfoot.setWorld(this);
