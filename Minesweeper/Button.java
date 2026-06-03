@@ -6,8 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @Cyndi Zou
  * @version (a version number or a date)
  */
-public class Button extends Actor
-{
+public class Button extends Actor{
     //initilaization - identify type of button and whether mouse is hovering over it
     protected String label;
     protected boolean isHovered;
