@@ -19,8 +19,6 @@ public class IntroScreen extends World
         //addObject(startButton, getWidth() / 2, getHeight() / 5 * 4 + 20);
         //Greenfoot.setWorld(this)
         
-        super(1200, 800, 1); 
-        
         //set background image
         
         //add menu buttons to the screen
