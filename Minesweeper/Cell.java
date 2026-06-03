@@ -59,6 +59,10 @@ public class Cell extends Button
         }
         isRevealed = true;
         updateImage();
+        
+        //tell MyWorld the cell was revealed
+        MyWorld world = (MyWorld) getWorld();
+        world.cellRevealed(this);
     }
     
     /**
@@ -90,11 +94,24 @@ public class Cell extends Button
             }
         }else if (isFlagged){
             //show flag image
-            setImage("flag.png");
+            //setImage("flag.png");
         }else{
             //default cell
-            setImage("unrevealed.png");
+            //setImage("unrevealed.png");
         }
+        
+        //tell MyWorld the flag count needs to change
+        MyWorld world = (MyWorld) getWorld();
+        world.updateFlag(isFlagged);
+    }
+    
+    /**
+     * forces the cell to show the bomb image
+     * called by MyWorld when the game is over
+     */
+    public void revealBomb(){
+        isRevealed = true;
+        //for the bomb image setImage("");
     }
     
     //sets whether the cell is a bomb
@@ -105,6 +122,11 @@ public class Cell extends Button
     //sets the number of nieghbouring bombs
     public void setNeighborCount(int count){
         this.neighborCount = count;
+    }
+    
+    //returns whether this cell is a bomb
+    public boolean getIsBomb(){
+        return isBomb;
     }
     
     //returns whether this cell has been revealed

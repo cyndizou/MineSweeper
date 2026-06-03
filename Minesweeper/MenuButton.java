@@ -47,13 +47,13 @@ public class MenuButton extends Button
     private void handleClick(){
         if(label.equals(START)){
             //switch to main game world
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new MyWorld(9));
         }else if(label.equals(QUIT)){
             //stop the game
             Greenfoot.stop();
         }else if(label.equals(RESTART)){
             //restart a new world 
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new MyWorld(9));
         }else if (label.equals(SOUND)){
             //flip sound between on and off
             soundOn = !soundOn;
