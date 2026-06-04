@@ -102,6 +102,7 @@ public class MyWorld extends World
                         }
                     }
                 }
+                
                 grid[row][col].setNeighborCount(count);
             }
         }
@@ -136,7 +137,7 @@ public class MyWorld extends World
     /**
      * Called when a flag is placed or removed
      * updates the bomb counter display
-     * @flagged - true if the flag was added, false if removed
+     * @param flagged - true if the flag was added, false if removed
      */
     public void updateFlag(boolean flagged){
         bombCounter.updateFlagCount(flagged);
