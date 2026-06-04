@@ -75,6 +75,10 @@ public class Cell extends Button
         }
         isFlagged = !isFlagged;
         updateImage();
+        
+        //tell MyWorld the flag count needs to change
+        MyWorld world = (MyWorld) getWorld();
+        world.updateFlag(isFlagged);
     }
     
     /**
@@ -99,10 +103,6 @@ public class Cell extends Button
             //default cell
             //setImage("unrevealed.png");
         }
-        
-        //tell MyWorld the flag count needs to change
-        MyWorld world = (MyWorld) getWorld();
-        world.updateFlag(isFlagged);
     }
     
     /**

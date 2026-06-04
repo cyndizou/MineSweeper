@@ -21,7 +21,7 @@ public class MyWorld extends World
      */
     public MyWorld(int gridSize){  
         //set template of grid
-        super(gridSize * CELL_SIZE, gridSize * CELL_SIZE + 100, 1);
+        super(800, 600, 1);
         
         //calculate size of grid
         this.gridSize = gridSize;
@@ -41,6 +41,10 @@ public class MyWorld extends World
     
     //create the individual cells and placed at the position of the grid
     private void initializeGrid(){
+        //initialize where the grid should start
+        int startX = (800 - gridSize * CELL_SIZE) / 2;
+        int startY = (600 - gridSize * CELL_SIZE) / 2 + 50;
+    
         for (int row=0; row<gridSize; row++){
             for(int col=0; col<gridSize; col++){
                 Cell cell = new Cell();
