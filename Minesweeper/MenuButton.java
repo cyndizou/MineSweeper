@@ -63,28 +63,18 @@ public class MenuButton extends Button
     /**
      * sets the image of this button based on its label
      */
-    private void updateImage(){
-        String displayLabel;
-        if(label.equals(SOUND)){
-            if(soundOn){
-<<<<<<< Updated upstream
+    private void updateImage() {
+        if (label.equals(SOUND)) {
+            if (soundOn) {
                 setImage("buttons/sound on.png");
-            }else{
+            } else {
                 setImage("buttons/sound off.png");
             }
-        }else if(label.equals(START)){
+        } else if (label.equals(START)) {
             setImage("buttons/start.png");
-=======
-                setImage("sound on.png");
-            }else{
-                setImage("sound off.png");
-            }
-        }else if(label.equals(START)){
-            setImage("start.png");
->>>>>>> Stashed changes
-        }else if(label.equals(QUIT)){
+        } else if (label.equals(QUIT)) {
             setImage("buttons/quit.png");
-        }else if(label.equals(RESTART)){
+        } else if (label.equals(RESTART)) {
             setImage("buttons/restart.png");
         }
     }
