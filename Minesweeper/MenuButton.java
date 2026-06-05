@@ -67,12 +67,21 @@ public class MenuButton extends Button
         String displayLabel;
         if(label.equals(SOUND)){
             if(soundOn){
+<<<<<<< Updated upstream
                 setImage("buttons/sound on.png");
             }else{
                 setImage("buttons/sound off.png");
             }
         }else if(label.equals(START)){
             setImage("buttons/start.png");
+=======
+                setImage("sound on.png");
+            }else{
+                setImage("sound off.png");
+            }
+        }else if(label.equals(START)){
+            setImage("start.png");
+>>>>>>> Stashed changes
         }else if(label.equals(QUIT)){
             setImage("buttons/quit.png");
         }else if(label.equals(RESTART)){
