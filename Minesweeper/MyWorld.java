@@ -12,7 +12,9 @@ public class MyWorld extends World
     private Cell[][] grid;
     private int gridSize;
     private int totalBombs;
-    private static final int CELL_SIZE = 50;
+    private static final int CELL_SIZE_SMALL = 50;
+    private static final int CELL_SIZE_LARGE = 30;
+    private int cellSize;
     private BombCounter bombCounter;
     
     /**
@@ -27,8 +29,10 @@ public class MyWorld extends World
         this.gridSize = gridSize;
         if(gridSize==9){
             totalBombs=10;
+            cellSize = CELL_SIZE_SMALL;
         }else if(gridSize==16){
             totalBombs=40;
+            cellSize = CELL_SIZE_LARGE;
         }
         
         grid = new Cell[gridSize][gridSize];
@@ -42,8 +46,9 @@ public class MyWorld extends World
     //create the individual cells and placed at the position of the grid
     private void initializeGrid(){
         //initialize where the grid should start
-        int startX = (800 - gridSize * CELL_SIZE) / 2;
-        int startY = (600 - gridSize * CELL_SIZE) / 2 + 50;
+        int startX = (800 - gridSize * cellSize) / 2 + cellSize / 2;
+        int startY = (600 - gridSize * cellSize) / 2 + cellSize / 2 + 25;
+
     
         for (int row=0; row<gridSize; row++){
             for(int col=0; col<gridSize; col++){
@@ -51,8 +56,8 @@ public class MyWorld extends World
                 grid[row][col]=cell;
                 
                 //calculate pixel positions for this cell
-                int x = col*CELL_SIZE + CELL_SIZE/2;
-                int y = row*CELL_SIZE + CELL_SIZE/2 + 100;
+                int x = col*cellSize + startX;
+                int y = row*cellSize + startY;
                 
                 addObject(cell, x, y);
             }
@@ -117,11 +122,11 @@ public class MyWorld extends World
      */
     private void addUI(){
         bombCounter = new BombCounter(totalBombs);
-        addObject(bombCounter, gridSize * CELL_SIZE / 2, 50);
+        addObject(bombCounter, 400, 50);
         
-        addObject(new MenuButton(MenuButton.RESTART), gridSize*CELL_SIZE-100, 50);
-        addObject(new MenuButton(MenuButton.QUIT), gridSize * CELL_SIZE-200, 50);
-        addObject(new MenuButton(MenuButton.SOUND), gridSize*CELL_SIZE - 50, 20);
+        addObject(new MenuButton(MenuButton.RESTART), 300, 50);
+        addObject(new MenuButton(MenuButton.QUIT), 200, 50);
+        addObject(new MenuButton(MenuButton.SOUND), 700, 50);
     }
     
     /**
