@@ -1,13 +1,6 @@
 #BlueJ class context
 comment0.target=MyWorld
-<<<<<<< Updated upstream
-comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=MyWorld()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\n\ \n
-numComments=2
-=======
-comment0.text=\n\ Main\ board\ screen\n\ \n\ @Cyndi\ Zou\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Main\ board\ screen\n\ \n\ @Cyndi\ Zou\ (edited\ by\:\ Aiza)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=gridSize
 comment1.target=MyWorld(int)
 comment1.text=\n\ Constructor\ -\ sets\ up\ the\ world\ to\ the\ user's\ chosen\ size\n\ @param\ gridSize\ 9x9\ or\ 16x16\n
@@ -41,4 +34,3 @@ comment9.params=
 comment9.target=void\ gameOver()
 comment9.text=\n\ ends\ the\ game\ when\ a\ bomb\ is\ clicked\n\ reveals\ all\ bombs\ on\ the\ board\n
 numComments=12
->>>>>>> Stashed changes
