@@ -52,6 +52,7 @@ public class Cell extends Button
      */
     private void handleLeftClick(){
         if(isRevealed){
+            if(
             return;
         }
         if(isFlagged){
