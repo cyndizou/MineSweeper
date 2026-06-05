@@ -87,21 +87,20 @@ public class Cell extends Button
     private void updateImage(){
         if(isRevealed){
             if(isBomb){
-                //show bomb image
-                //setImage("");
+                setImage("bomb.png");
             } else if(neighborCount>0){
                 //show image with number of neighbouring bombs
-                //setImage("");
+                setImage(neighborCount + ".png");
             }else{
                 //empty cell with no neighbouring bombs
-                //setImage("");
+                setImage("blank block.png");
             }
         }else if (isFlagged){
             //show flag image
             //setImage("flag.png");
         }else{
             //default cell
-            //setImage("unrevealed.png");
+            setImage("cell.png");
         }
     }
     
@@ -111,7 +110,7 @@ public class Cell extends Button
      */
     public void revealBomb(){
         isRevealed = true;
-        //for the bomb image setImage("");
+        setImage("bomb.png");
     }
     
     //sets whether the cell is a bomb

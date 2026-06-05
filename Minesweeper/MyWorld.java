@@ -24,6 +24,7 @@ public class MyWorld extends World
     public MyWorld(int gridSize){  
         //set template of grid
         super(800, 600, 1);
+        setBackground("border.png");
         
         //calculate size of grid
         this.gridSize = gridSize;
