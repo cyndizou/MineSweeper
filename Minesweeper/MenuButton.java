@@ -24,7 +24,7 @@ public class MenuButton extends Button
     public MenuButton(String label){
         super(label);
         soundOn = true;
-        //updateImage();
+        updateImage();
     }
     
     /**
@@ -67,16 +67,16 @@ public class MenuButton extends Button
         String displayLabel;
         if(label.equals(SOUND)){
             if(soundOn){
-                //setImage("");
+                setImage("buttons/sound on.png");
             }else{
-                //setImage("");
+                setImage("buttons/sound off.png");
             }
         }else if(label.equals(START)){
-            //setImage("start.png");
+            setImage("buttons/start.png");
         }else if(label.equals(QUIT)){
-            //setImage("quit.png");
+            setImage("buttons/quit.png");
         }else if(label.equals(RESTART)){
-            //setImage("restart.png");
+            setImage("buttons/restart.png");
         }
     }
     
