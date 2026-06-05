@@ -1,38 +1,53 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Main board screen
+ * Write a description of class MyWorld here.
  * 
- * @Cyndi Zou
+<<<<<<< Updated upstream
+ * @author (your name) 
+=======
+ * @Cyndi Zou (edited by: Aiza)
+>>>>>>> Stashed changes
  * @version (a version number or a date)
  */
 public class MyWorld extends World
 {
+<<<<<<< Updated upstream
+
+=======
     //initialize all elements needed for the board
     private Cell[][] grid;
     private int gridSize;
     private int totalBombs;
-    private static final int CELL_SIZE_SMALL = 50;
-    private static final int CELL_SIZE_LARGE = 30;
-    private int cellSize;
+    private static final int CELL_SIZE = 50;
     private BombCounter bombCounter;
     
+    //for timed or relaxed
+    private boolean timedMode;
+    
+>>>>>>> Stashed changes
     /**
-     * Constructor - sets up the world to the user's chosen size
-     * @param gridSize 9x9 or 16x16
+     * Constructor for objects of class MyWorld.
+     * 
      */
+<<<<<<< Updated upstream
+    public MyWorld()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 400, 1); 
+=======
     public MyWorld(int gridSize){  
         //set template of grid
-        super(800, 600, 1);
+        super(gridSize * CELL_SIZE, gridSize * CELL_SIZE + 100, 1);
         
+        //Set the background -- border only 
+        setBackground(new GreenfootImage("border.png"));
         //calculate size of grid
         this.gridSize = gridSize;
         if(gridSize==9){
             totalBombs=10;
-            cellSize = CELL_SIZE_SMALL;
         }else if(gridSize==16){
             totalBombs=40;
-            cellSize = CELL_SIZE_LARGE;
         }
         
         grid = new Cell[gridSize][gridSize];
@@ -45,19 +60,14 @@ public class MyWorld extends World
     
     //create the individual cells and placed at the position of the grid
     private void initializeGrid(){
-        //initialize where the grid should start
-        int startX = (800 - gridSize * cellSize) / 2 + cellSize / 2;
-        int startY = (600 - gridSize * cellSize) / 2 + cellSize / 2 + 25;
-
-    
         for (int row=0; row<gridSize; row++){
             for(int col=0; col<gridSize; col++){
                 Cell cell = new Cell();
                 grid[row][col]=cell;
                 
                 //calculate pixel positions for this cell
-                int x = col*cellSize + startX;
-                int y = row*cellSize + startY;
+                int x = col*CELL_SIZE + CELL_SIZE/2;
+                int y = row*CELL_SIZE + CELL_SIZE/2 + 100;
                 
                 addObject(cell, x, y);
             }
@@ -123,11 +133,11 @@ public class MyWorld extends World
      */
     private void addUI(){
         bombCounter = new BombCounter(totalBombs);
-        addObject(bombCounter, 400, 50);
+        addObject(bombCounter, gridSize * CELL_SIZE / 2, 50);
         
-        addObject(new MenuButton(MenuButton.RESTART), 300, 50);
-        addObject(new MenuButton(MenuButton.QUIT), 200, 50);
-        addObject(new MenuButton(MenuButton.SOUND), 700, 50);
+        addObject(new MenuButton(MenuButton.RESTART), gridSize*CELL_SIZE-100, 50);
+        addObject(new MenuButton(MenuButton.QUIT), gridSize * CELL_SIZE-200, 50);
+        addObject(new MenuButton(MenuButton.SOUND), gridSize*CELL_SIZE - 50, 20);
     }
     
     /**
@@ -194,5 +204,6 @@ public class MyWorld extends World
      */
     public int getGridSize(){
         return gridSize;
+>>>>>>> Stashed changes
     }
 }
