@@ -12,9 +12,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-<<<<<<< Updated upstream
-
-=======
     //initialize all elements needed for the board
     private Cell[][] grid;
     private int gridSize;
@@ -25,17 +22,17 @@ public class MyWorld extends World
     //for timed or relaxed
     private boolean timedMode;
     
->>>>>>> Stashed changes
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-<<<<<<< Updated upstream
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-=======
+        super(600, 400, 1);
+    }
+    
+    
     public MyWorld(int gridSize){  
         //set template of grid
         super(gridSize * CELL_SIZE, gridSize * CELL_SIZE + 100, 1);
@@ -204,6 +201,5 @@ public class MyWorld extends World
      */
     public int getGridSize(){
         return gridSize;
->>>>>>> Stashed changes
     }
 }
