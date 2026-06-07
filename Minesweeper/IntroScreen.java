@@ -24,7 +24,7 @@ public class IntroScreen extends World
         //add menu buttons to the screen
         addObject(new MenuButton(MenuButton.START), 400, 400);
         addObject(new MenuButton(MenuButton.SOUND), 700, 510);
-        //addObject(new MenuButton(MenuButton.INFO),
+        //addObject(new MenuButton(MenuButton.INFO), 
     }
     
     public void act() {
