@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Main board screen
  * 
- * @Cyndi Zou
+ * @Cyndi Zou (edited by Aiza -- for mode selection)
  * @version (a version number or a date)
  */
 public class MyWorld extends World
@@ -17,17 +17,21 @@ public class MyWorld extends World
     private int cellSize;
     private BombCounter bombCounter;
     
+    //for mode selection
+    private boolean timedMode;
+    
     /**
      * Constructor - sets up the world to the user's chosen size
      * @param gridSize 9x9 or 16x16
      */
-    public MyWorld(int gridSize){  
+    public MyWorld(int gridSize, boolean timedMode){  
         //set template of grid
         super(800, 600, 1);
         setBackground("border.png");
         
         //calculate size of grid
         this.gridSize = gridSize;
+        this.timedMode = timedMode;
         if(gridSize==9){
             totalBombs=10;
             cellSize = CELL_SIZE_SMALL;
@@ -195,5 +199,10 @@ public class MyWorld extends World
      */
     public int getGridSize(){
         return gridSize;
+    }
+    
+    //getter for timer mode
+    public boolean getTimedMode() {
+        return timedMode;
     }
 }

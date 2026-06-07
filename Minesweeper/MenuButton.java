@@ -47,13 +47,28 @@ public class MenuButton extends Button
     private void handleClick(){
         if(label.equals(START)){
             //switch to main game world
-            Greenfoot.setWorld(new MyWorld(9));
+            //commented out going to main world to bringing 
+            //user to customization world
+            //Greenfoot.setWorld(new MyWorld(9));
+            //Greenfoot.setWorld(new CustomizationWorld());
+            
+            if(getWorld() instanceof CustomizationWorld) {
+                CustomizationWorld world = (CustomizationWorld)getWorld();
+                Greenfoot.setWorld(new MyWorld(world.getGridSize(), world.getTimedMode()));
+            } else {
+                Greenfoot.setWorld(new CustomizationWorld());
+            }
+            
         }else if(label.equals(QUIT)){
             //stop the game
             Greenfoot.stop();
         }else if(label.equals(RESTART)){
             //restart a new world 
-            Greenfoot.setWorld(new MyWorld(9));
+            //had to add changes here 
+            //Greenfoot.setWorld(new MyWorld(9));
+            
+            MyWorld world = (MyWorld)getWorld();
+            Greenfoot.setWorld(new MyWorld(world.getGridSize(), world.getTimedMode()));
         }else if (label.equals(SOUND)){
             //flip sound between on and off
             soundOn = !soundOn;

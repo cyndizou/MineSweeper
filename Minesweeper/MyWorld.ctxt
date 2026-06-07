@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=MyWorld
-comment0.text=\n\ Main\ board\ screen\n\ \n\ @Cyndi\ Zou\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=gridSize
-comment1.target=MyWorld(int)
+comment0.text=\n\ Main\ board\ screen\n\ \n\ @Cyndi\ Zou\ (edited\ by\ Aiza\ --\ for\ mode\ selection)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=gridSize\ timedMode
+comment1.target=MyWorld(int,\ boolean)
 comment1.text=\n\ Constructor\ -\ sets\ up\ the\ world\ to\ the\ user's\ chosen\ size\n\ @param\ gridSize\ 9x9\ or\ 16x16\n
 comment10.params=
 comment10.target=Cell[][]\ getGrid()
@@ -10,6 +10,8 @@ comment10.text=\n\ getter\ -\ returns\ the\ grid\ array\n
 comment11.params=
 comment11.target=int\ getGridSize()
 comment11.text=\n\ getter\ -\ returns\ the\ grid\ size\n
+comment12.params=
+comment12.target=boolean\ getTimedMode()
 comment2.params=
 comment2.target=void\ initializeGrid()
 comment3.params=
@@ -33,4 +35,4 @@ comment8.text=\n\ Checks\ if\ the\ player\ has\ won\n\ win\ condition\ is\ if\ a
 comment9.params=
 comment9.target=void\ gameOver()
 comment9.text=\n\ ends\ the\ game\ when\ a\ bomb\ is\ clicked\n\ reveals\ all\ bombs\ on\ the\ board\n
-numComments=12
+numComments=13
