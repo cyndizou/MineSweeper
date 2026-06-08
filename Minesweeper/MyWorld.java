@@ -136,7 +136,43 @@ public class MyWorld extends World
      * stops spreading when it hits a numbered cell
      */
     public void floodReveal(int startRow, int startCol){
+        Stack<int[]> stack = new Stack<int[]>();
         
+        //first put the clicked cell
+        stack.push(new int[]{startRow, startCol});
+        
+        while(stack.isEmpty()==false){
+            //take the next cell off the stack
+            int[] current = stack.pop();
+            int row = current[0];
+            int col = current[1];
+            
+            //check all 8 neighboring cells
+            for(int rowOffset = -1; rowOffset<=1; rowOffset++){
+                for(int colOffset = -1; colOffset <= 1; colOffset++){
+                    if(rowOffset == 0 && colOffset == 0){
+                        continue;
+                    }
+                    
+                    int neighborRow = row + rowOffset;
+                    int neighborCol = col + colOffset;
+                    
+                    //make sure dont go out of bounds
+                    if (neighborRow >= 0 && neighborRow < gridSize && neighborCol >= 0 && neighborCol < gridSize) {
+                        Cell neighbor = grid[neighborRow][neighborCol];
+                        
+                        //only reveal if it isn't already revealed and it's not a bomb
+                        if (neighbor.getIsRevealed() == false && neighbor.getIsBomb() == false) {
+                            neighbor.forceReveal();
+                            
+                            if (neighbor.getNeighborCount() == 0) {
+                                stack.push(new int[]{neighborRow, neighborCol});
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     /**
      * adds the UI elements to the top of the screen

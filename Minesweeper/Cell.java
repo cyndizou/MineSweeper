@@ -66,6 +66,11 @@ public class Cell extends Button
         //tell MyWorld the cell was revealed
         MyWorld world = (MyWorld) getWorld();
         world.cellRevealed(this);
+        
+        //if empty cell then trigger flood reveal
+        if(neighborCount == 0 && isBomb == false){
+            world.floodReveal(row, col);
+        }
     }
     
     /**
@@ -176,5 +181,11 @@ public class Cell extends Button
     //getter for col position
     public int getCol(){
         return col;
+    }
+    
+    //forces the cell to reveal WITHOUT triggering another flood reveal
+    public void forceReveal(){
+        isRevealed = true;
+        updateImage();
     }
 }
