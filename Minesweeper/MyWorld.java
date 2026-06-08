@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.Stack;
 /**
  * Main board screen
  * 
@@ -60,6 +60,10 @@ public class MyWorld extends World
                 Cell cell = new Cell();
                 grid[row][col]=cell;
                 
+                //set size first
+                cell.setCellSize(cellSize);
+                cell.setPosition(row, col);
+                                
                 //calculate pixel positions for this cell
                 int x = col*cellSize + startX;
                 int y = row*cellSize + startY;
@@ -103,8 +107,13 @@ public class MyWorld extends World
                 int count = 0;
                 
                 //loop through all 8 neighboring cells
-                for (int rowOffset = -1; rowOffset<1; rowOffset++){
+                for (int rowOffset = -1; rowOffset<=1; rowOffset++){
                     for (int colOffset = -1; colOffset <=1; colOffset++){
+                        //skip the cell itself
+                        if(rowOffset==0 & colOffset==0){
+                            continue;
+                        }
+                        
                         int neighborRow = row + rowOffset;
                         int neighborCol = col + colOffset;
                         
@@ -122,6 +131,13 @@ public class MyWorld extends World
         }
     }
     
+    /**
+     * implement the flood effect that reveals all plain blocks next to the one user clicks
+     * stops spreading when it hits a numbered cell
+     */
+    public void floodReveal(int startRow, int startCol){
+        
+    }
     /**
      * adds the UI elements to the top of the screen
      * including the bomb counter and menu buttons

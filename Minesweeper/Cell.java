@@ -13,6 +13,9 @@ public class Cell extends Button
     private boolean isRevealed;
     private boolean isFlagged;
     private int neighborCount;
+    private int cellSize;
+    private int row;
+    private int col;
     
     /**
      * Constructor - creates a hidden unflagged, bombless cell
@@ -32,14 +35,14 @@ public class Cell extends Button
      */
     public void act()
     {
-        if(isClicked()){
-            handleLeftClick();
-        }
-        
-        if(Greenfoot.mouseClicked(this)){
+        if (Greenfoot.mouseClicked(this)) {
             MouseInfo mouse = Greenfoot.getMouseInfo();
-            if(mouse!=null){
-                if(mouse.getButton()==3){
+            if (mouse != null) {
+                //1 for left click
+                if (mouse.getButton() == 1) {
+                    handleLeftClick();
+                } else if (mouse.getButton() == 3) {
+                    //3 for left click
                     handleRightClick();
                 }
             }
@@ -97,10 +100,17 @@ public class Cell extends Button
             }
         }else if (isFlagged){
             //show flag image
-            //setImage("flag.png");
+            setImage("flag.png");
         }else{
             //default cell
             setImage("cell.png");
+        }
+        
+        //update size only after size is set
+        if(cellSize>0){
+            GreenfootImage img = getImage();
+            img.scale(cellSize, cellSize);
+            setImage(img);
         }
     }
     
@@ -110,9 +120,24 @@ public class Cell extends Button
      */
     public void revealBomb(){
         isRevealed = true;
-        setImage("bomb.png");
+        updateImage();
     }
     
+    /**
+     * sets cell sizes according to game mode
+     */
+    public void setCellSize(int cellSize){
+        this.cellSize = cellSize;
+        updateImage();
+    }
+    
+    /**
+     * sets cell position
+     */
+    public void setPosition(int row, int col){
+        this.row = row;
+        this.col = col;
+    }
     //sets whether the cell is a bomb
     public void setBomb(boolean isBomb){
         this.isBomb = isBomb;
@@ -141,5 +166,15 @@ public class Cell extends Button
     //returns the number of neighbouring bombs
     public int getNeighborCount(){
         return neighborCount;
+    }
+    
+    //getter for row position
+    public int getRow(){
+        return row;
+    }
+    
+    //getter for col position
+    public int getCol(){
+        return col;
     }
 }
