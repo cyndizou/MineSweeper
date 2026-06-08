@@ -15,6 +15,7 @@ public class MyWorld extends World
     private static final int CELL_SIZE_SMALL = 50;
     private static final int CELL_SIZE_LARGE = 30;
     private int cellSize;
+    private int boostAmount = 15;
     private BombCounter bombCounter;
     
     //for mode selection
@@ -243,6 +244,23 @@ public class MyWorld extends World
     }
     
     /**
+     * randomly place one timer boost on the game grid AND make sure it doens't land 
+     * on the bombs
+     */
+    private void placeBoost(){
+        boolean placed = false;
+        while(placed==false){
+            int randomRow = Greenfoot.getRandomNumber(gridSize);
+            int randomCol = Greenfoot.getRandomNumber(gridSize);
+            
+            if (grid[randomRow][randomCol].getIsBomb() == false) {
+                grid[randomRow][randomCol].setBoost(true);
+                placed = true;
+            }
+        }
+    }
+    
+    /**
      * getter - returns the grid array
      */
     public Cell[][] getGrid(){
@@ -259,5 +277,11 @@ public class MyWorld extends World
     //getter for timer mode
     public boolean getTimedMode() {
         return timedMode;
+    }
+    
+    //apply timer boost
+    public void applyTimerBoost(){
+        //TO BE CONNECTED!!!
+        System.out.println("boost applied");
     }
 }

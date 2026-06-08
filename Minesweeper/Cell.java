@@ -12,6 +12,8 @@ public class Cell extends Button
     private boolean isBomb;
     private boolean isRevealed;
     private boolean isFlagged;
+    private boolean isBoost; //for timer boost
+    private boolean floodRevealed; //to check if timer boost was revealed by flood
     private int neighborCount;
     private int cellSize;
     private int row;
@@ -61,11 +63,17 @@ public class Cell extends Button
             return;
         }
         isRevealed = true;
+        floodRevealed = false;
         updateImage();
         
         //tell MyWorld the cell was revealed
         MyWorld world = (MyWorld) getWorld();
         world.cellRevealed(this);
+        
+        //if the boost was clicked directly then apply timer boost
+        if(isBoost){
+            world.applyTimerBoost();
+        }
         
         //if empty cell then trigger flood reveal
         if(neighborCount == 0 && isBomb == false){
@@ -96,7 +104,12 @@ public class Cell extends Button
         if(isRevealed){
             if(isBomb){
                 setImage("bomb.png");
-            } else if(neighborCount>0){
+            }else if(isBoost && floodRevealed){
+                //player missed the timer boost --> show faded version
+                //setImage("");
+            }else if(isBoost && floodRevealed == false){
+                //setImage("");
+            }else if(neighborCount>0){
                 //show image with number of neighbouring bombs
                 setImage(neighborCount + ".png");
             }else{
@@ -186,6 +199,15 @@ public class Cell extends Button
     //forces the cell to reveal WITHOUT triggering another flood reveal
     public void forceReveal(){
         isRevealed = true;
+        floodRevealed = true; 
         updateImage();
+    }
+    
+    public void setBoost(boolean isBoost){
+        this.isBoost = isBoost;
+    }
+    
+    public boolean getIsBoost(){
+        return isBoost;
     }
 }
