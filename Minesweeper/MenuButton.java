@@ -103,4 +103,9 @@ public class MenuButton extends Button
     public boolean isSoundOn(){
         return soundOn;
     }
+    
+    //resizing the button in the game world
+    public void resize(int width, int height) {
+        getImage().scale(width, height);
+    }
 }
