@@ -1,18 +1,18 @@
 #BlueJ class context
 comment0.target=Button
-comment0.text=\n\ Button\ is\ the\ superclass\ for\ all\ mouse-clicking\ elements\n\ \n\ @Cyndi\ Zou\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Button\ is\ the\ superclass\ for\ all\ mouse-clicking\ elements\r\n\ \r\n\ @Cyndi\ Zou\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=label
 comment1.target=Button(java.lang.String)
-comment1.text=\n\ Constructor\ -\ sets\ up\ the\ button\ with\ a\ label\n\ @param\ label\ the\ name\ of\ this\ button\n
+comment1.text=\r\n\ Constructor\ -\ sets\ up\ the\ button\ with\ a\ label\r\n\ @param\ label\ the\ name\ of\ this\ button\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ called\ every\ frame\ by\ Greenfoot,\ checks\ hover\ state\n
+comment2.text=\r\n\ called\ every\ frame\ by\ Greenfoot,\ checks\ hover\ state\r\n
 comment3.params=
 comment3.target=void\ checkHover()
-comment3.text=\n\ check\ if\ mouse\ is\ currently\ over\ this\ button\ and\ updates\ accordingly\n
+comment3.text=\r\n\ check\ if\ mouse\ is\ currently\ over\ this\ button\ and\ updates\ accordingly\r\n
 comment4.params=
 comment4.target=boolean\ isClicked()
-comment4.text=\n\ Returns\ true\ if\ the\ mouse\ has\ clicked\ this\ button\n
+comment4.text=\r\n\ Returns\ true\ if\ the\ mouse\ has\ clicked\ this\ button\r\n
 comment5.params=
 comment5.target=java.lang.String\ getLabel()
 numComments=6
