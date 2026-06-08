@@ -130,6 +130,7 @@ public class MyWorld extends World
         bombCounter = new BombCounter(totalBombs);
         addObject(bombCounter, 400, 50);
         
+        
         addObject(new MenuButton(MenuButton.RESTART), 300, 50);
         addObject(new MenuButton(MenuButton.QUIT), 200, 50);
         addObject(new MenuButton(MenuButton.SOUND), 700, 50);
