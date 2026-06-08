@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=MenuButton
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MenuButton\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=label
+comment1.target=MenuButton(java.lang.String)
+comment1.text=\r\n\ Constructor\ -\ creates\ a\ menu\ button\ with\ the\ given\ label\ and\ sets\ sound\r\n\ to\ on\ by\ default\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ called\ every\ frame\ by\ greenfoot\r\n\ checks\ for\ clicks\ and\ updates\ the\ image\r\n
+comment3.params=
+comment3.target=void\ handleClick()
+comment3.text=\r\n\ handles\ what\ happens\ when\ the\ button\ is\ clicked\r\n\ depending\ on\ what\ type\ of\ button\ it\ is\r\n
+comment4.params=
+comment4.target=void\ updateImage()
+comment4.text=\r\n\ sets\ the\ image\ of\ this\ button\ based\ on\ its\ label\r\n
+comment5.params=
+comment5.target=boolean\ isSoundOn()
+comment6.params=width\ height
+comment6.target=void\ resize(int,\ int)
+numComments=7
