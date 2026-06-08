@@ -56,7 +56,7 @@ public class ModeButton extends Button
         } else if (label.equals(RELAXED)) {
             setImage("buttons/relaxed.png");
         } else if (label.equals(EASY)) {
-            setImage("buttons/easy.png");
+            setImage("buttons/easy1.png");
         } else if (label.equals(HARD)) {
             setImage("buttons/hard.png");
         }
