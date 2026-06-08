@@ -1,15 +1,15 @@
 #BlueJ class context
 comment0.target=BombCounter
-comment0.text=\n\ Bomb\ Counter\ -\ displays\ the\ number\ on\ the\ screen\ showing\ how\ many\ bombs\ \n\ are\ left\ unflagged\n\ \n\ @Cyndi\ Zou\n\ @06.02.26\n
+comment0.text=\r\n\ Bomb\ Counter\ -\ displays\ the\ number\ on\ the\ screen\ showing\ how\ many\ bombs\ \r\n\ are\ left\ unflagged\r\n\ \r\n\ @Cyndi\ Zou\r\n\ @06.02.26\r\n
 comment1.params=totalBombs
 comment1.target=BombCounter(int)
-comment1.text=\n\ Constructor\ -\ sets\ up\ the\ counter\ with\ the\ total\ number\ of\ bombs\n\ @param\ totalBombs\n
+comment1.text=\r\n\ Constructor\ -\ sets\ up\ the\ counter\ with\ the\ total\ number\ of\ bombs\r\n\ @param\ totalBombs\r\n
 comment2.params=flagged
 comment2.target=void\ updateFlagCount(boolean)
-comment2.text=\n\ updates\ the\ display\ to\ show\ bombs\ remaining\n
+comment2.text=\r\n\ updates\ the\ display\ to\ show\ bombs\ remaining\r\n
 comment3.params=
 comment3.target=void\ updateImage()
-comment3.text=\n\ updates\ the\ display\ to\ show\ bombs\ remaining\n
+comment3.text=\r\n\ updates\ the\ display\ to\ show\ bombs\ remaining\r\n
 comment4.params=
 comment4.target=int\ getBombsLeft()
 numComments=5

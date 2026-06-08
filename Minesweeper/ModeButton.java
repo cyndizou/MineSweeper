@@ -52,13 +52,13 @@ public class ModeButton extends Button
     
     private void updateImage() {
         if(label.equals(TIMED)) {
-            setImage("buttons/timed.png");
+            setImage("buttons/timed (1).png");
         } else if (label.equals(RELAXED)) {
-            setImage("buttons/relaxed.png");
+            setImage("buttons/relaxed (1).png");
         } else if (label.equals(EASY)) {
-            setImage("buttons/easy.png");
+            setImage("buttons/easy (1).png");
         } else if (label.equals(HARD)) {
-            setImage("buttons/hard.png");
+            setImage("buttons/hard (1).png");
         }
     }
 }
