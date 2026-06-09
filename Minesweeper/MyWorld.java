@@ -145,9 +145,13 @@ public class MyWorld extends World
         
         MenuButton restartButton = new MenuButton(MenuButton.RESTART);
         restartButton.resize(20, 10);
-  
-        addObject(new MenuButton(MenuButton.QUIT), 111, 500);   
+        addObject(restartButton, 200, 100);
+        //addObject(new MenuButton(MenuButton.RESTART), 100, 50);
+        addObject(new MenuButton(MenuButton.QUIT), 200, 50);
+        addObject(restartButton, 685, 500);
+       
         addObject(new MenuButton(MenuButton.RESTART), 685, 500);
+        addObject(new MenuButton(MenuButton.QUIT), 111, 500);
         addObject(new MenuButton(MenuButton.SOUND), 700, 50);
     }
     
@@ -222,38 +226,5 @@ public class MyWorld extends World
     //getter for timer mode
     public boolean getTimedMode() {
         return timedMode;
-    }
-    
-        public boolean isGameOver() {
-        return gameOver;
-    }
-    
-    public void handleCellClick(int row, int col) {
-        Cell cell = grid[row][col];
-        
-        if (firstClick) {
-            firstClick = false;
-            placeBombs(row, col);
-            placeBoost();
-            calculateNeighbors();
-        }
-        
-        if (cell.getIsBomb()) {
-            cell.forceReveal();
-            gameOver();
-            return;
-        }
-        
-        cell.forceReveal();
-        
-        if (cell.getIsBoost()) {
-            applyTimerBoost();
-        }
-        
-        if (cell.getNeighborCount() == 0) {
-            floodReveal(row, col);
-        }
-        
-        checkWin();
     }
 }

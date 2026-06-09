@@ -1,56 +1,66 @@
 #BlueJ class context
 comment0.target=MyWorld
-comment0.text=\n\ Main\ board\ screen\n\ \n\ @Cyndi\ Zou\ (edited\ by\ Aiza\ --\ for\ mode\ selection)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Main\ board\ screen\r\n\ \r\n\ @Cyndi\ Zou\ (edited\ by\ Aiza\ --\ for\ mode\ selection)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=gridSize\ timedMode
 comment1.target=MyWorld(int,\ boolean)
-comment1.text=\n\ Constructor\ -\ sets\ up\ the\ world\ to\ the\ user's\ chosen\ size\n\ @param\ gridSize\ 9x9\ or\ 16x16\n
-comment10.params=flagged
-comment10.target=void\ updateFlag(boolean)
-comment10.text=\n\ Called\ when\ a\ flag\ is\ placed\ or\ removed\n\ updates\ the\ bomb\ counter\ display\n\ @param\ flagged\ -\ true\ if\ the\ flag\ was\ added,\ false\ if\ removed\n
+comment1.text=\r\n\ Constructor\ -\ sets\ up\ the\ world\ to\ the\ user's\ chosen\ size\r\n\ @param\ gridSize\ 9x9\ or\ 16x16\r\n
+comment10.params=
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+comment10.target=Cell[][]\ getGrid()
+comment10.text=\r\n\ getter\ -\ returns\ the\ grid\ array\r\n
 comment11.params=
-comment11.target=void\ checkWin()
-comment11.text=\n\ Checks\ if\ the\ player\ has\ won\n\ win\ condition\ is\ if\ all\ non-bomb\ cells\ are\ revealed\n
+comment11.target=int\ getGridSize()
+comment11.text=\r\n\ getter\ -\ returns\ the\ grid\ size\r\n
 comment12.params=
-comment12.target=void\ gameOver()
-comment12.text=\n\ ends\ the\ game\ when\ a\ bomb\ is\ clicked\n\ reveals\ all\ bombs\ on\ the\ board\n
+comment12.target=boolean\ getTimedMode()
+=======
+=======
+>>>>>>> Stashed changes
+comment10.target=void\ gameOver()
+comment10.text=\r\n\ ends\ the\ game\ when\ a\ bomb\ is\ clicked\r\n\ reveals\ all\ bombs\ on\ the\ board\r\n
+comment11.params=
+comment11.target=void\ placeBoost()
+comment11.text=\r\n\ randomly\ place\ one\ timer\ boost\ on\ the\ game\ grid\ AND\ make\ sure\ it\ doens't\ land\ \r\n\ on\ the\ bombs\r\n
+comment12.params=
+comment12.target=Cell[][]\ getGrid()
+comment12.text=\r\n\ getter\ -\ returns\ the\ grid\ array\r\n
 comment13.params=
-comment13.target=void\ placeBoost()
-comment13.text=\n\ randomly\ place\ one\ timer\ boost\ on\ the\ game\ grid\ AND\ make\ sure\ it\ doens't\ land\ \n\ on\ the\ bombs\n
+comment13.target=int\ getGridSize()
+comment13.text=\r\n\ getter\ -\ returns\ the\ grid\ size\r\n
 comment14.params=
-comment14.target=Cell[][]\ getGrid()
-comment14.text=\n\ getter\ -\ returns\ the\ grid\ array\n
+comment14.target=boolean\ getTimedMode()
 comment15.params=
-comment15.target=int\ getGridSize()
-comment15.text=\n\ getter\ -\ returns\ the\ grid\ size\n
-comment16.params=
-comment16.target=boolean\ getTimedMode()
-comment17.params=
-comment17.target=void\ applyTimerBoost()
-comment18.params=
-comment18.target=boolean\ isFirstClick()
-comment19.params=
-comment19.target=boolean\ isGameOver()
+comment15.target=void\ applyTimerBoost()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 comment2.params=
 comment2.target=void\ initializeGrid()
-comment3.params=safeRow\ safeCol
-comment3.target=void\ placeBombs(int,\ int)
-comment3.text=\n\ randomly\ place\ bombs\ on\ the\ grid\ while\ making\ sure\ there\ isn't\n\ one\ already\ in\ the\ cell\n
+comment3.params=
+comment3.target=void\ placeBombs()
+comment3.text=\r\n\ randomly\ place\ bombs\ on\ the\ grid\ while\ making\ sure\ there\ isn't\r\n\ one\ already\ in\ the\ cell\r\n
 comment4.params=
 comment4.target=void\ calculateNeighbors()
-comment4.text=\n\ goes\ through\ every\ cell\ and\ counts\ how\ many\ bombs\ are\ in\n\ the\ surrounding\ cells\n
-comment5.params=row\ col
-comment5.target=void\ handleCellClick(int,\ int)
-comment5.text=\n\ testing\ for\ moving\ all\ into\ world\ for\ handling\ left\ click\n
-comment6.params=safeRow\ safeCol
-comment6.target=void\ firstClickReveal(int,\ int)
-comment6.text=\n\ special\ handling\ for\ the\ first\ user\ click,\ ensure\ it\ is\ not\ a\ bomb,\ only\ place\n\ bombs\ after\ first\ click\n
-comment7.params=startRow\ startCol
-comment7.target=void\ floodReveal(int,\ int)
-comment7.text=\n\ implement\ the\ flood\ effect\ that\ reveals\ all\ plain\ blocks\ next\ to\ the\ one\ user\ clicks\n\ stops\ spreading\ when\ it\ hits\ a\ numbered\ cell\n
-comment8.params=
-comment8.target=void\ addUI()
-comment8.text=\n\ adds\ the\ UI\ elements\ to\ the\ top\ of\ the\ screen\n\ including\ the\ bomb\ counter\ and\ menu\ buttons\n
-comment9.params=cell
-comment9.target=void\ cellRevealed(Cell)
-comment9.text=\n\ called\ when\ a\ cell\ is\ revealed\n\ checks\ if\ the\ player\ hit\ a\ bomb\ or\ won\ the\ game\n\ @param\ cell\ -\ the\ cell\ that\ was\ just\ revealed\n
-numComments=20
+comment4.text=\r\n\ goes\ through\ every\ cell\ and\ counts\ how\ many\ bombs\ are\ in\r\n\ the\ surrounding\ cells\r\n
+comment5.params=startRow\ startCol
+comment5.target=void\ floodReveal(int,\ int)
+comment5.text=\r\n\ implement\ the\ flood\ effect\ that\ reveals\ all\ plain\ blocks\ next\ to\ the\ one\ user\ clicks\r\n\ stops\ spreading\ when\ it\ hits\ a\ numbered\ cell\r\n
+comment6.params=
+comment6.target=void\ addUI()
+comment6.text=\r\n\ adds\ the\ UI\ elements\ to\ the\ top\ of\ the\ screen\r\n\ including\ the\ bomb\ counter\ and\ menu\ buttons\r\n
+comment7.params=cell
+comment7.target=void\ cellRevealed(Cell)
+comment7.text=\r\n\ called\ when\ a\ cell\ is\ revealed\r\n\ checks\ if\ the\ player\ hit\ a\ bomb\ or\ won\ the\ game\r\n\ @param\ cell\ -\ the\ cell\ that\ was\ just\ revealed\r\n
+comment8.params=flagged
+comment8.target=void\ updateFlag(boolean)
+comment8.text=\r\n\ Called\ when\ a\ flag\ is\ placed\ or\ removed\r\n\ updates\ the\ bomb\ counter\ display\r\n\ @param\ flagged\ -\ true\ if\ the\ flag\ was\ added,\ false\ if\ removed\r\n
+comment9.params=
+comment9.target=void\ checkWin()
+comment9.text=\r\n\ Checks\ if\ the\ player\ has\ won\r\n\ win\ condition\ is\ if\ all\ non-bomb\ cells\ are\ revealed\r\n
+numComments=16
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
