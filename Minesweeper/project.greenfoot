@@ -1,4 +1,13 @@
 #Greenfoot project file
+<<<<<<< Updated upstream
+editor.fx.0.height=737
+editor.fx.0.width=814
+editor.fx.0.x=232
+editor.fx.0.y=4
+height=766
+package.numDependencies=0
+package.numTargets=1
+=======
 dependency1.from=IntroScreen
 dependency1.to=MenuButton
 dependency1.type=UsesDependency
@@ -32,13 +41,14 @@ dependency8.type=UsesDependency
 dependency9.from=MenuButton
 dependency9.to=MyWorld
 dependency9.type=UsesDependency
-editor.fx.0.height=728
-editor.fx.0.width=861
-editor.fx.0.x=140
-editor.fx.0.y=63
-height=797
+editor.fx.0.height=766
+editor.fx.0.width=1294
+editor.fx.0.x=-7
+editor.fx.0.y=-7
+height=766
 package.numDependencies=11
 package.numTargets=11
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -54,21 +64,26 @@ readme.x=10
 readme.y=10
 simulation.speed=50
 target1.height=70
-target1.name=ModeButton
+target1.name=MyWorld
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
 target1.x=0
 target1.y=0
+<<<<<<< Updated upstream
+version=3.1.0
+width=1294
+world.lastInstantiated=MyWorld
+=======
 target10.height=70
-target10.name=MyWorld
+target10.name=BombCounter
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
-target11.name=BombCounter
+target11.name=MyWorld
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
@@ -131,7 +146,8 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-width=1440
+width=1294
 world.lastInstantiated=IntroScreen
-xPosition=58
-yPosition=80
+>>>>>>> Stashed changes
+xPosition=0
+yPosition=0
