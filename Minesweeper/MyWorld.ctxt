@@ -6,6 +6,7 @@ comment1.target=MyWorld(int,\ boolean)
 comment1.text=\n\ Constructor\ -\ sets\ up\ the\ world\ to\ the\ user's\ chosen\ size\n\ @param\ gridSize\ 9x9\ or\ 16x16\n
 comment10.params=
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 comment10.target=Cell[][]\ getGrid()
 comment10.text=\n\ getter\ -\ returns\ the\ grid\ array\n
 comment11.params=
@@ -14,6 +15,8 @@ comment11.text=\n\ getter\ -\ returns\ the\ grid\ size\n
 comment12.params=
 comment12.target=boolean\ getTimedMode()
 =======
+=======
+>>>>>>> Stashed changes
 comment10.target=void\ checkWin()
 comment10.text=\n\ Checks\ if\ the\ player\ has\ won\n\ win\ condition\ is\ if\ all\ non-bomb\ cells\ are\ revealed\n
 comment11.params=
@@ -32,12 +35,12 @@ comment15.params=
 comment15.target=boolean\ getTimedMode()
 comment16.params=
 comment16.target=void\ applyTimerBoost()
->>>>>>> Stashed changes
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ initializeGrid()
 comment4.params=
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 comment4.target=void\ calculateNeighbors()
 comment4.text=\n\ goes\ through\ every\ cell\ and\ counts\ how\ many\ bombs\ are\ in\n\ the\ surrounding\ cells\n
@@ -58,6 +61,8 @@ comment9.target=void\ gameOver()
 comment9.text=\n\ ends\ the\ game\ when\ a\ bomb\ is\ clicked\n\ reveals\ all\ bombs\ on\ the\ board\n
 numComments=13
 =======
+=======
+>>>>>>> Stashed changes
 comment4.target=void\ placeBombs()
 comment4.text=\n\ randomly\ place\ bombs\ on\ the\ grid\ while\ making\ sure\ there\ isn't\n\ one\ already\ in\ the\ cell\n
 comment5.params=
@@ -76,4 +81,3 @@ comment9.params=flagged
 comment9.target=void\ updateFlag(boolean)
 comment9.text=\n\ Called\ when\ a\ flag\ is\ placed\ or\ removed\n\ updates\ the\ bomb\ counter\ display\n\ @param\ flagged\ -\ true\ if\ the\ flag\ was\ added,\ false\ if\ removed\n
 numComments=17
->>>>>>> Stashed changes

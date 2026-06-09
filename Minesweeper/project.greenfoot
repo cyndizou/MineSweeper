@@ -24,10 +24,10 @@ dependency5.from=MyWorld
 dependency5.to=Cell
 dependency5.type=UsesDependency
 dependency6.from=MyWorld
-dependency6.to=MenuButton
+dependency6.to=EndWorld
 dependency6.type=UsesDependency
 dependency7.from=MyWorld
-dependency7.to=EndWorld
+dependency7.to=MenuButton
 dependency7.type=UsesDependency
 dependency8.from=ModeButton
 dependency8.to=CustomizationWorld
@@ -37,17 +37,10 @@ dependency9.to=CustomizationWorld
 dependency9.type=UsesDependency
 editor.fx.0.height=728
 editor.fx.0.width=861
-<<<<<<< Updated upstream
-editor.fx.0.x=196
-editor.fx.0.y=85
-height=797
-package.numDependencies=11
-=======
-editor.fx.0.x=331
-editor.fx.0.y=81
-height=662
+editor.fx.0.x=241
+editor.fx.0.y=77
+height=751
 package.numDependencies=12
->>>>>>> Stashed changes
 package.numTargets=11
 project.charset=UTF-8
 publish.hasSource=false
@@ -120,14 +113,14 @@ target6.width=120
 target6.x=0
 target6.y=0
 target7.height=70
-target7.name=MenuButton
+target7.name=InstructionWorld
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
-target8.name=InstructionWorld
+target8.name=MenuButton
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=120
@@ -141,12 +134,7 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-width=1440
+width=1073
 world.lastInstantiated=IntroScreen
-<<<<<<< Updated upstream
-xPosition=0
-yPosition=46
-=======
-xPosition=4
-yPosition=60
->>>>>>> Stashed changes
+xPosition=173
+yPosition=30
