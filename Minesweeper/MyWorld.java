@@ -20,6 +20,10 @@ public class MyWorld extends World
     //for mode selection
     private boolean timedMode;
     
+    //For game over delay
+    private boolean gameLost = false;
+    private int endDelay = 0;
+    
     /**
      * Constructor - sets up the world to the user's chosen size
      * @param gridSize 9x9 or 16x16
@@ -46,6 +50,15 @@ public class MyWorld extends World
         placeBombs();
         calculateNeighbors();
         addUI();
+    }
+    
+    public void act() {
+        if(gameLost) {
+            endDelay--;
+            if(endDelay <= 0) {
+                Greenfoot.setWorld(new EndWorld());
+            }
+        }
     }
     
     //create the individual cells and placed at the position of the grid
@@ -187,7 +200,9 @@ public class MyWorld extends World
                 }
             }
         }
-        Greenfoot.stop();
+        
+        gameLost = true;
+        endDelay = 120;
     }
     
     /**
