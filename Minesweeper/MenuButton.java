@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MenuButton here.
  * 
- * @Cyndi Zou
+ * @author (your name) 
  * @version (a version number or a date)
  */
 public class MenuButton extends Button
@@ -89,11 +89,17 @@ public class MenuButton extends Button
                 setImage("buttons/sound off.png");
             }
         } else if (label.equals(START)) {
-            setImage("buttons/start (1).png");
+            setImage("buttons/start.png");
         } else if (label.equals(QUIT)) {
-            setImage("buttons/quit (1).png");
+<<<<<<< Updated upstream
+            setImage("buttons/quit.png");
         } else if (label.equals(RESTART)) {
-            setImage("buttons/restart (1).png");
+            setImage("buttons/restart.png");
+=======
+            setImage("buttons/quit (2).png");
+        } else if (label.equals(RESTART)) {
+            setImage("buttons/restart (2).png");
+>>>>>>> Stashed changes
         } else if (label.equals(INFO)) {
             setImage("buttons/info.png");
         }
