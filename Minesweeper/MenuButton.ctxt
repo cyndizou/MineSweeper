@@ -1,10 +1,6 @@
 #BlueJ class context
 comment0.target=MenuButton
-<<<<<<< Updated upstream
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MenuButton\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-=======
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ MenuButton\ here.\r\n\ \r\n\ @Cyndi\ Zou\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
->>>>>>> Stashed changes
 comment1.params=label
 comment1.target=MenuButton(java.lang.String)
 comment1.text=\r\n\ Constructor\ -\ creates\ a\ menu\ button\ with\ the\ given\ label\ and\ sets\ sound\r\n\ to\ on\ by\ default\r\n
