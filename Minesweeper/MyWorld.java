@@ -17,6 +17,8 @@ public class MyWorld extends World
     private int cellSize;
     private int boostAmount = 15;
     private BombCounter bombCounter;
+    private boolean firstClick = true; //making sure first click is a basic block
+    private boolean gameOver = false;
     
     //for mode selection
     private boolean timedMode;
@@ -44,7 +46,6 @@ public class MyWorld extends World
         grid = new Cell[gridSize][gridSize];
         
         initializeGrid();
-        placeBombs();
         calculateNeighbors();
         addUI();
     }
@@ -78,15 +79,15 @@ public class MyWorld extends World
      * randomly place bombs on the grid while making sure there isn't
      * one already in the cell
      */
-    private void placeBombs(){
+    private void placeBombs(int safeRow, int safeCol){
         int bombsPlaced = 0;
         
         while(bombsPlaced<totalBombs){
             int randomRow = Greenfoot.getRandomNumber(gridSize);
             int randomCol = Greenfoot.getRandomNumber(gridSize);
             
-            //only place a bomb if there isn't one already
-            if(grid[randomRow][randomCol].getIsBomb()==false){
+            //only place a bomb if there isn't one already AND if it isn't a safe block
+            if(grid[randomRow][randomCol].getIsBomb()==false && randomRow!=safeRow && randomCol!=safeCol){
                 grid[randomRow][randomCol].setBomb(true);
                 bombsPlaced++;
             }
@@ -133,48 +134,100 @@ public class MyWorld extends World
     }
     
     /**
+     * testing for moving all into world for handling left click
+     */
+    public void handleCellClick(int row, int col) {
+        Cell cell = grid[row][col];
+        
+        if (firstClick) {
+            firstClick = false;
+            placeBombs(row, col);
+            placeBoost();
+            calculateNeighbors();
+        }
+        
+        if (cell.getIsBomb()) {
+            cell.forceReveal();
+            gameOver();
+            return;
+        }
+        
+        cell.forceReveal();
+        
+        if (cell.getIsBoost()) {
+            applyTimerBoost();
+        }
+        
+        if (cell.getNeighborCount() == 0) {
+            floodReveal(row, col);
+        }
+        
+        checkWin();
+    }
+
+    /**
+     * special handling for the first user click, ensure it is not a bomb, only place
+     * bombs after first click
+     */
+    public void firstClickReveal(int safeRow, int safeCol){
+        firstClick = false;
+        placeBombs(safeRow, safeCol);
+        placeBoost();
+        calculateNeighbors(); 
+        
+        //reveal the cell
+        Cell cell = grid[safeRow][safeCol];
+        cell.forceReveal();
+        
+        //if it's empty, do the flood reveal
+        if(cell.getNeighborCount()==0){
+            floodReveal(safeRow, safeCol);
+        }
+    }
+    
+    /**
      * implement the flood effect that reveals all plain blocks next to the one user clicks
      * stops spreading when it hits a numbered cell
      */
-    public void floodReveal(int startRow, int startCol){
+    public void floodReveal(int startRow, int startCol) {
         Stack<int[]> stack = new Stack<int[]>();
         
-        //first put the clicked cell
-        stack.push(new int[]{startRow, startCol});
+        //push neighbors of the cell into the stack
+        for (int rowOffset = -1; rowOffset <= 1; rowOffset++) {
+            for (int colOffset = -1; colOffset <= 1; colOffset++) {
+                if (rowOffset == 0 && colOffset == 0) {
+                    continue;
+                }
+                int neighborRow = startRow + rowOffset;
+                int neighborCol = startCol + colOffset;
+                
+                if (neighborRow >= 0 && neighborRow < gridSize && neighborCol >= 0 && neighborCol < gridSize) {
+                    stack.push(new int[]{neighborRow, neighborCol});
+                }
+            }
+        }
         
-        while(stack.isEmpty()==false){
-            //take the next cell off the stack
+        while (stack.isEmpty() == false) {
             int[] current = stack.pop();
             int row = current[0];
             int col = current[1];
             
-            //check all 8 neighboring cells
-            for(int rowOffset = -1; rowOffset<=1; rowOffset++){
-                for(int colOffset = -1; colOffset <= 1; colOffset++){
-                    if(rowOffset == 0 && colOffset == 0){
-                        continue;
-                    }
-                    
-                    int neighborRow = row + rowOffset;
-                    int neighborCol = col + colOffset;
-                    
-                    //make sure dont go out of bounds
-                    if (neighborRow >= 0 && neighborRow < gridSize && neighborCol >= 0 && neighborCol < gridSize) {
-                        Cell neighbor = grid[neighborRow][neighborCol];
-                        
-                        //only reveal if it isn't already revealed and it's not a bomb
-                        if (neighbor.getIsRevealed() == false && neighbor.getIsBomb() == false) {
-                            neighbor.forceReveal();
-                            
-                            if (neighbor.getNeighborCount() == 0) {
-                                stack.push(new int[]{neighborRow, neighborCol});
-                            }
-                        }
-                    }
+            if (grid[row][col].getIsRevealed()) {
+                continue;
+            }
+            
+            Cell neighbor = grid[row][col];
+            
+            if (neighbor.getIsBomb() == false) {
+                neighbor.forceReveal();
+                
+                if (neighbor.getNeighborCount() == 0) {
+                    stack.push(new int[]{row, col});
                 }
             }
         }
     }
+    
     /**
      * adds the UI elements to the top of the screen
      * including the bomb counter and menu buttons
@@ -233,6 +286,7 @@ public class MyWorld extends World
      * reveals all bombs on the board
      */
     private void gameOver(){
+        gameOver = true;
         for(int row = 0; row < gridSize; row++){
             for(int col = 0; col<gridSize; col++){
                 if(grid[row][col].getIsBomb()){
@@ -284,4 +338,14 @@ public class MyWorld extends World
         //TO BE CONNECTED!!!
         System.out.println("boost applied");
     }
+    
+    //for cell to check if its first click
+    public boolean isFirstClick(){
+        return true;
+    }
+    
+    public boolean isGameOver() {
+        return gameOver;
+    }
+    
 }

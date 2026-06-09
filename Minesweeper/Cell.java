@@ -5,7 +5,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @Cyndi Zou 
  * @version (a version number or a date)
+ * 
+ * Credits:
+ * - help from claude for neighboring logic and flood reveal
  */
+
 public class Cell extends Button
 {
     //initialization of main functions
@@ -35,18 +39,17 @@ public class Cell extends Button
      * called every frame by Greenfot
      * checks for left and right clicks
      */
-    public void act()
-    {
-        if (Greenfoot.mouseClicked(this)) {
-            MouseInfo mouse = Greenfoot.getMouseInfo();
-            if (mouse != null) {
-                //1 for left click
-                if (mouse.getButton() == 1) {
-                    handleLeftClick();
-                } else if (mouse.getButton() == 3) {
-                    //3 for left click
-                    handleRightClick();
-                }
+    public void act() {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if (mouse != null && Greenfoot.mouseClicked(this)) {
+            MyWorld world = (MyWorld) getWorld();
+            if (world.isGameOver()) {
+                return;
+            }
+            if (mouse.getButton() == 1) {
+                handleLeftClick();
+            } else if (mouse.getButton() == 3) {
+                handleRightClick();
             }
         }
     }
@@ -55,30 +58,20 @@ public class Cell extends Button
      * handles left click - reveals the cell
      * does nothing if cell is already revealed or flagged
      */
-    private void handleLeftClick(){
-        if(isRevealed){
+    private void handleLeftClick() {
+        if (isRevealed) {
             return;
         }
-        if(isFlagged){
+        if (isFlagged) {
             return;
         }
-        isRevealed = true;
-        floodRevealed = false;
-        updateImage();
         
-        //tell MyWorld the cell was revealed
         MyWorld world = (MyWorld) getWorld();
-        world.cellRevealed(this);
-        
-        //if the boost was clicked directly then apply timer boost
-        if(isBoost){
-            world.applyTimerBoost();
+        if (world.isGameOver()) {
+            return;
         }
         
-        //if empty cell then trigger flood reveal
-        if(neighborCount == 0 && isBomb == false){
-            world.floodReveal(row, col);
-        }
+        world.handleCellClick(row, col);
     }
     
     /**

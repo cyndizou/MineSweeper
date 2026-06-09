@@ -38,7 +38,6 @@ public class MenuButton extends Button
         if(isClicked()){
             handleClick();
         }
-        updateImage();
     }
     
     /**
@@ -73,6 +72,7 @@ public class MenuButton extends Button
         } else if (label.equals(SOUND)){
             //flip sound between on and off
             soundOn = !soundOn;
+            updateImage();
         } else if (label.equals(INFO)) {
             Greenfoot.setWorld(new InstructionWorld());
         }
