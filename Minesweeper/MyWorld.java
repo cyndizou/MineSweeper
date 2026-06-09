@@ -185,9 +185,9 @@ public class MyWorld extends World
         
         MenuButton restartButton = new MenuButton(MenuButton.RESTART);
         restartButton.resize(20, 10);
-        addObject(restartButton, 200, 100);
+        addObject(restartButton, 630, 500);
         //addObject(new MenuButton(MenuButton.RESTART), 100, 50);
-        addObject(new MenuButton(MenuButton.QUIT), 200, 50);
+        addObject(new MenuButton(MenuButton.QUIT), 130, 510);
         addObject(new MenuButton(MenuButton.SOUND), 700, 50);
     }
     
