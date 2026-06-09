@@ -89,17 +89,11 @@ public class MenuButton extends Button
                 setImage("buttons/sound off.png");
             }
         } else if (label.equals(START)) {
-            setImage("buttons/start.png");
+            setImage("buttons/start (1).png");
         } else if (label.equals(QUIT)) {
-<<<<<<< Updated upstream
-            setImage("buttons/quit.png");
-        } else if (label.equals(RESTART)) {
-            setImage("buttons/restart.png");
-=======
             setImage("buttons/quit (2).png");
         } else if (label.equals(RESTART)) {
             setImage("buttons/restart (2).png");
->>>>>>> Stashed changes
         } else if (label.equals(INFO)) {
             setImage("buttons/info.png");
         }

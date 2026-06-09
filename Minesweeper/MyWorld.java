@@ -142,6 +142,7 @@ public class MyWorld extends World
     private void addUI(){
         bombCounter = new BombCounter(totalBombs);
         addObject(bombCounter, 400, 50);
+<<<<<<< Updated upstream
         
         MenuButton restartButton = new MenuButton(MenuButton.RESTART);
         restartButton.resize(20, 10);
@@ -152,6 +153,11 @@ public class MyWorld extends World
 =======
         addObject(restartButton, 685, 500);
         //addObject(new MenuButton(MenuButton.RESTART), 100, 50);
+        addObject(new MenuButton(MenuButton.QUIT), 111, 500);
+>>>>>>> Stashed changes
+=======
+       
+        addObject(new MenuButton(MenuButton.RESTART), 685, 500);
         addObject(new MenuButton(MenuButton.QUIT), 111, 500);
 >>>>>>> Stashed changes
         addObject(new MenuButton(MenuButton.SOUND), 700, 50);

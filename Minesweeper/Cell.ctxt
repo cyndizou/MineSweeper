@@ -4,13 +4,8 @@ comment0.text=\n\ Cell\ -\ each\ individual\ block\ that\ user\ clicks\ on\ to\ 
 comment1.params=
 comment1.target=Cell()
 comment1.text=\n\ Constructor\ -\ creates\ a\ hidden\ unflagged,\ bombless\ cell\n
-<<<<<<< Updated upstream
-comment10.params=
-comment10.target=boolean\ getIsRevealed()
-=======
 comment10.params=count
 comment10.target=void\ setNeighborCount(int)
->>>>>>> Stashed changes
 comment11.params=
 comment11.target=boolean\ getIsBomb()
 comment12.params=
@@ -44,15 +39,6 @@ comment5.text=\n\ updates\ the\ image\ of\ the\ cell\ based\ on\ its\ current\ s
 comment6.params=
 comment6.target=void\ revealBomb()
 comment6.text=\n\ forces\ the\ cell\ to\ show\ the\ bomb\ image\n\ called\ by\ MyWorld\ when\ the\ game\ is\ over\n
-<<<<<<< Updated upstream
-comment7.params=isBomb
-comment7.target=void\ setBomb(boolean)
-comment8.params=count
-comment8.target=void\ setNeighborCount(int)
-comment9.params=
-comment9.target=boolean\ getIsBomb()
-numComments=13
-=======
 comment7.params=cellSize
 comment7.target=void\ setCellSize(int)
 comment7.text=\n\ sets\ cell\ sizes\ according\ to\ game\ mode\n
@@ -62,4 +48,3 @@ comment8.text=\n\ sets\ cell\ position\n
 comment9.params=isBomb
 comment9.target=void\ setBomb(boolean)
 numComments=20
->>>>>>> Stashed changes
