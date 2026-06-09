@@ -99,9 +99,9 @@ public class Cell extends Button
                 setImage("bomb.png");
             }else if(isBoost && floodRevealed){
                 //player missed the timer boost --> show faded version
-                //setImage("");
+                setImage("faded time booster.png");
             }else if(isBoost && floodRevealed == false){
-                setImage("time booster");
+                setImage("time booster.png");
             }else if(neighborCount>0){
                 //show image with number of neighbouring bombs
                 setImage(neighborCount + ".png");

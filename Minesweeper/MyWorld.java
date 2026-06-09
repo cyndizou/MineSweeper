@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.Stack;
 /**
  * Main board screen
  * 
@@ -16,6 +16,8 @@ public class MyWorld extends World
     private static final int CELL_SIZE_LARGE = 30;
     private int cellSize;
     private BombCounter bombCounter;
+    private boolean gameOver = false;
+    private boolean firstClick = true;
     
     //for mode selection
     private boolean timedMode;
@@ -47,7 +49,6 @@ public class MyWorld extends World
         grid = new Cell[gridSize][gridSize];
         
         initializeGrid();
-        placeBombs();
         calculateNeighbors();
         addUI();
     }
@@ -73,11 +74,15 @@ public class MyWorld extends World
                 Cell cell = new Cell();
                 grid[row][col]=cell;
                 
+                cell.setCellSize(cellSize);
+                cell.setPosition(row, col);
+                
                 //calculate pixel positions for this cell
                 int x = col*cellSize + startX;
                 int y = row*cellSize + startY;
                 
                 addObject(cell, x, y);
+                
             }
         }
     }
@@ -86,15 +91,14 @@ public class MyWorld extends World
      * randomly place bombs on the grid while making sure there isn't
      * one already in the cell
      */
-    private void placeBombs(){
+    private void placeBombs(int safeRow, int safeCol){
         int bombsPlaced = 0;
-        
-        while(bombsPlaced<totalBombs){
+        while(bombsPlaced < totalBombs){
             int randomRow = Greenfoot.getRandomNumber(gridSize);
             int randomCol = Greenfoot.getRandomNumber(gridSize);
-            
-            //only place a bomb if there isn't one already
-            if(grid[randomRow][randomCol].getIsBomb()==false){
+            if(grid[randomRow][randomCol].getIsBomb() == false &&
+               randomRow != safeRow &&
+               randomCol != safeCol){
                 grid[randomRow][randomCol].setBomb(true);
                 bombsPlaced++;
             }
@@ -115,8 +119,8 @@ public class MyWorld extends World
                 
                 int count = 0;
                 
-                //loop through all 8 neighboring cells
-                for (int rowOffset = -1; rowOffset<1; rowOffset++){
+                    //loop through all 8 neighboring cells
+                for (int rowOffset = -1; rowOffset<=1; rowOffset++){
                     for (int colOffset = -1; colOffset <=1; colOffset++){
                         int neighborRow = row + rowOffset;
                         int neighborCol = col + colOffset;
@@ -197,17 +201,117 @@ public class MyWorld extends World
      * reveals all bombs on the board
      */
     private void gameOver(){
+        gameOver = true;
         for(int row = 0; row < gridSize; row++){
-            for(int col = 0; col<gridSize; col++){
+            for(int col = 0; col < gridSize; col++){
                 if(grid[row][col].getIsBomb()){
                     grid[row][col].revealBomb();
                 }
             }
         }
-        
         gameLost = true;
         endDelay = 120;
     }
+    
+    /**
+     * randomly places one boost cell avoiding bombs
+     */
+    private void placeBoost(){
+        boolean placed = false;
+        while(placed == false){
+            int randomRow = Greenfoot.getRandomNumber(gridSize);
+            int randomCol = Greenfoot.getRandomNumber(gridSize);
+            if(grid[randomRow][randomCol].getIsBomb() == false){
+                grid[randomRow][randomCol].setBoost(true);
+                placed = true;
+            }
+        }
+    }
+    
+    /**
+     * handles all cell click logic in one place
+     */
+    public void handleCellClick(int row, int col){
+        Cell cell = grid[row][col];
+        
+        if(firstClick){
+            firstClick = false;
+            placeBombs(row, col);
+            placeBoost();
+            calculateNeighbors();
+        }
+        
+        if(cell.getIsBomb()){
+            cell.forceReveal();
+            gameOver();
+            return;
+        }
+        
+        cell.forceReveal();
+        
+        if(cell.getIsBoost()){
+            applyTimerBoost();
+        }
+        
+        if(cell.getNeighborCount() == 0){
+            floodReveal(row, col);
+        }
+        
+        checkWin();
+    }
+    
+    /**
+     * reveals all connected empty cells from the clicked cell
+     */
+    public void floodReveal(int startRow, int startCol){
+        Stack<int[]> stack = new Stack<int[]>();
+        
+        for(int rowOffset = -1; rowOffset <= 1; rowOffset++){
+            for(int colOffset = -1; colOffset <= 1; colOffset++){
+                if(rowOffset == 0 && colOffset == 0){
+                    continue;
+                }
+                int neighborRow = startRow + rowOffset;
+                int neighborCol = startCol + colOffset;
+                if(neighborRow >= 0 && neighborRow < gridSize && neighborCol >= 0 && neighborCol < gridSize){
+                    stack.push(new int[]{neighborRow, neighborCol});
+                }
+            }
+        }
+        
+        while(stack.isEmpty() == false){
+            int[] current = stack.pop();
+            int row = current[0];
+            int col = current[1];
+            
+            if(grid[row][col].getIsRevealed()){
+                continue;
+            }
+            
+            Cell neighbor = grid[row][col];
+            
+            if(neighbor.getIsBomb() == false){
+                neighbor.forceReveal();
+                
+                //MAKE SURE TO PUSH ALL NEIGHBORS TO TEHE STACK
+                if(neighbor.getNeighborCount() == 0){
+                    for(int rowOffset = -1; rowOffset <= 1; rowOffset++){
+                        for(int colOffset = -1; colOffset <= 1; colOffset++){
+                            if(rowOffset == 0 && colOffset == 0){
+                                continue;
+                            }
+                            int newRow = row + rowOffset;
+                            int newCol = col + colOffset;
+                            if(newRow >= 0 && newRow < gridSize && newCol >= 0 && newCol < gridSize){
+                                stack.push(new int[]{newRow, newCol});
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     
     /**
      * getter - returns the grid array
@@ -223,8 +327,23 @@ public class MyWorld extends World
         return gridSize;
     }
     
+    /**
+     * called when player directly clicks the boost cell
+     */
+    public void applyTimerBoost(){
+        System.out.println("Boost applied!");
+        // STILL NEED OT CONNECT TO TIMERRR
+    }
+
     //getter for timer mode
     public boolean getTimedMode() {
         return timedMode;
     }
+    
+    //game over
+    public boolean isGameOver(){
+        return gameOver;
+    }
+    
+    
 }
