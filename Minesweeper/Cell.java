@@ -13,6 +13,12 @@ public class Cell extends Button
     private boolean isRevealed;
     private boolean isFlagged;
     private int neighborCount;
+<<<<<<< Updated upstream
+=======
+    private int cellSize;
+    private int row;
+    private int col; 
+>>>>>>> Stashed changes
     
     /**
      * Constructor - creates a hidden unflagged, bombless cell
@@ -85,10 +91,21 @@ public class Cell extends Button
      * updates the image of the cell based on its current state
      */
     private void updateImage(){
+        MyWorld world = (MyWorld)getWorld();
+        
         if(isRevealed){
             if(isBomb){
                 setImage("bomb.png");
+<<<<<<< Updated upstream
             } else if(neighborCount>0){
+=======
+            }else if(isBoost && floodRevealed && world.getTimedMode()){
+                //player missed the timer boost --> show faded version
+                setImage("faded time booster.png");
+            }else if(isBoost && floodRevealed == false && world.getTimedMode()){
+                setImage("time booster.png");
+            }else if(neighborCount>0){
+>>>>>>> Stashed changes
                 //show image with number of neighbouring bombs
                 setImage(neighborCount + ".png");
             }else{
