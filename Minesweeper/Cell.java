@@ -5,23 +5,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @Cyndi Zou 
  * @version (a version number or a date)
- * 
- * Credits:
- * - help from claude for neighboring logic and flood reveal
  */
-
 public class Cell extends Button
 {
     //initialization of main functions
     private boolean isBomb;
     private boolean isRevealed;
     private boolean isFlagged;
-    private boolean isBoost; //for timer boost
-    private boolean floodRevealed; //to check if timer boost was revealed by flood
     private int neighborCount;
+<<<<<<< Updated upstream
+=======
     private int cellSize;
     private int row;
-    private int col;
+    private int col; 
+>>>>>>> Stashed changes
     
     /**
      * Constructor - creates a hidden unflagged, bombless cell
@@ -39,17 +36,18 @@ public class Cell extends Button
      * called every frame by Greenfot
      * checks for left and right clicks
      */
-    public void act() {
-        MouseInfo mouse = Greenfoot.getMouseInfo();
-        if (mouse != null && Greenfoot.mouseClicked(this)) {
-            MyWorld world = (MyWorld) getWorld();
-            if (world.isGameOver()) {
-                return;
-            }
-            if (mouse.getButton() == 1) {
-                handleLeftClick();
-            } else if (mouse.getButton() == 3) {
-                handleRightClick();
+    public void act()
+    {
+        if(isClicked()){
+            handleLeftClick();
+        }
+        
+        if(Greenfoot.mouseClicked(this)){
+            MouseInfo mouse = Greenfoot.getMouseInfo();
+            if(mouse!=null){
+                if(mouse.getButton()==3){
+                    handleRightClick();
+                }
             }
         }
     }
@@ -58,20 +56,19 @@ public class Cell extends Button
      * handles left click - reveals the cell
      * does nothing if cell is already revealed or flagged
      */
-    private void handleLeftClick() {
-        if (isRevealed) {
+    private void handleLeftClick(){
+        if(isRevealed){
             return;
         }
-        if (isFlagged) {
+        if(isFlagged){
             return;
         }
+        isRevealed = true;
+        updateImage();
         
+        //tell MyWorld the cell was revealed
         MyWorld world = (MyWorld) getWorld();
-        if (world.isGameOver()) {
-            return;
-        }
-        
-        world.handleCellClick(row, col);
+        world.cellRevealed(this);
     }
     
     /**
@@ -94,15 +91,21 @@ public class Cell extends Button
      * updates the image of the cell based on its current state
      */
     private void updateImage(){
+        MyWorld world = (MyWorld)getWorld();
+        
         if(isRevealed){
             if(isBomb){
                 setImage("bomb.png");
-            }else if(isBoost && floodRevealed){
+<<<<<<< Updated upstream
+            } else if(neighborCount>0){
+=======
+            }else if(isBoost && floodRevealed && world.getTimedMode()){
                 //player missed the timer boost --> show faded version
                 setImage("faded time booster.png");
-            }else if(isBoost && floodRevealed == false){
+            }else if(isBoost && floodRevealed == false && world.getTimedMode()){
                 setImage("time booster.png");
             }else if(neighborCount>0){
+>>>>>>> Stashed changes
                 //show image with number of neighbouring bombs
                 setImage(neighborCount + ".png");
             }else{
@@ -111,17 +114,10 @@ public class Cell extends Button
             }
         }else if (isFlagged){
             //show flag image
-            setImage("flag.png");
+            //setImage("flag.png");
         }else{
             //default cell
             setImage("cell.png");
-        }
-        
-        //update size only after size is set
-        if(cellSize>0){
-            GreenfootImage img = getImage();
-            img.scale(cellSize, cellSize);
-            setImage(img);
         }
     }
     
@@ -131,24 +127,9 @@ public class Cell extends Button
      */
     public void revealBomb(){
         isRevealed = true;
-        updateImage();
+        setImage("bomb.png");
     }
     
-    /**
-     * sets cell sizes according to game mode
-     */
-    public void setCellSize(int cellSize){
-        this.cellSize = cellSize;
-        updateImage();
-    }
-    
-    /**
-     * sets cell position
-     */
-    public void setPosition(int row, int col){
-        this.row = row;
-        this.col = col;
-    }
     //sets whether the cell is a bomb
     public void setBomb(boolean isBomb){
         this.isBomb = isBomb;
@@ -177,30 +158,5 @@ public class Cell extends Button
     //returns the number of neighbouring bombs
     public int getNeighborCount(){
         return neighborCount;
-    }
-    
-    //getter for row position
-    public int getRow(){
-        return row;
-    }
-    
-    //getter for col position
-    public int getCol(){
-        return col;
-    }
-    
-    //forces the cell to reveal WITHOUT triggering another flood reveal
-    public void forceReveal(){
-        isRevealed = true;
-        floodRevealed = true; 
-        updateImage();
-    }
-    
-    public void setBoost(boolean isBoost){
-        this.isBoost = isBoost;
-    }
-    
-    public boolean getIsBoost(){
-        return isBoost;
     }
 }
