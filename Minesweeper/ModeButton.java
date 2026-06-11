@@ -15,8 +15,12 @@ public class ModeButton extends Button
     public static final String EASY = "Easy";
     public static final String HARD = "Hard"; 
     
+    //Allow the user to select and de-select the modes
+    private boolean selected;
+    
     public ModeButton(String label) {
         super(label);
+        selected = false;
         updateImage();
     }
     
@@ -27,29 +31,74 @@ public class ModeButton extends Button
         if(isClicked()) {
             handleClick();
         }
+        
     }
     
+    
+   
     private void handleClick() {
         CustomizationWorld world = (CustomizationWorld)getWorld();
-        /*
-        if(label.equals(TIMED)) {
-            Greenfoot.setWorld(new MyWorld(9));
-        } else if (label.equals(RELAXED)) {
-            Greenfoot.setWorld(new MyWorld(9));
+
+        if(label.equals(TIMED) || label.equals(RELAXED))
+        {
+            world.selectMode(label);
         }
-        */
-       
-        if(label.equals(TIMED)) {
-            world.setTimedMode(true);
-        } else if (label.equals(RELAXED)) {
-            world.setTimedMode(false);
-        } else if (label.equals(EASY)) {
-            world.setGridSize(9);
-        } else if (label.equals(HARD)) {
-            world.setGridSize(16);
+    
+        if(label.equals(EASY) || label.equals(HARD))
+        {
+            world.selectDifficulty(label);
         }
     }
     
+    private void updateImage()
+    {
+        if(label.equals(TIMED))
+        {
+            if(selected)
+            {
+                setImage("buttons/pressed timed.png");
+            }
+            else
+            {
+                setImage("buttons/timed (1).png");
+            }
+        }
+        else if(label.equals(RELAXED))
+        {
+            if(selected)
+            {
+                setImage("buttons/pressed relaxed.png");
+            }
+            else
+            {
+                setImage("buttons/relaxed (1).png");
+            }
+        }
+        else if(label.equals(EASY))
+        {
+            if(selected)
+            {
+                setImage("buttons/pressed easy.png");
+            }
+            else
+            {
+                setImage("buttons/easy (1).png");
+            }
+        }
+        else if(label.equals(HARD))
+        {
+            if(selected)
+            {
+                setImage("buttons/pressed hard.png");
+            }
+            else
+            {
+                setImage("buttons/hard (1).png");
+            }
+        }
+    }
+    
+    /*
     private void updateImage() {
         if(label.equals(TIMED)) {
             setImage("buttons/timed (1).png");
@@ -59,6 +108,44 @@ public class ModeButton extends Button
             setImage("buttons/easy (1).png");
         } else if (label.equals(HARD)) {
             setImage("buttons/hard (1).png");
+            if(selected) {
+                setImage("buttons/pressed timed.png");
+            } else {
+                setImage("buttons/timed (1).png");
+            }
+        } else if (label.equals(RELAXED)) {
+            if(selected) {
+                setImage("buttons/pressed relaxed.png");
+            } else {
+                setImage("buttons/relaxed (1).png");
+            }
+        } else if (label.equals(EASY)) {
+            if(selected) {
+               setImage("buttons/pressed easy.png"); 
+            } else {
+                setImage("buttons/easy (1).png");
+            }
+        } else if (label.equals(HARD)) {
+            if(selected) {
+              setImage("buttons/pressed hard.png");  
+            } else {
+                setImage("buttons/hard (1).png");
+            }
         }
+    }
+    */
+    
+    /*
+     * Methods for adding the radio button affect.
+     * Allows the deselection of one button when the other is selected
+     */
+    
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+        updateImage();
+    }
+    
+    public boolean isSelected() {
+        return selected;
     }
 }
