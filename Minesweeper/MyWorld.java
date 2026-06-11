@@ -26,6 +26,10 @@ public class MyWorld extends World
     private boolean gameLost = false;
     private int endDelay = 0;
     
+    //Timer display
+    private TimerDisplay timerDisplay;
+    private int frameCounter;
+    
     /**
      * Constructor - sets up the world to the user's chosen size
      * @param gridSize 9x9 or 16x16
@@ -54,6 +58,16 @@ public class MyWorld extends World
     }
     
     public void act() {
+        //timer
+        frameCounter++;
+        if(frameCounter >= 60) {
+            frameCounter = 0;
+            timerDisplay.updateTime();
+            if(timedMode && timerDisplay.getTime() <= 0) {
+                gameOver();
+            }
+        }
+        
         if(gameLost) {
             endDelay--;
             if(endDelay <= 0) {
@@ -146,17 +160,20 @@ public class MyWorld extends World
     private void addUI(){
         bombCounter = new BombCounter(totalBombs);
         addObject(bombCounter, 400, 50);
-        
-        MenuButton restartButton = new MenuButton(MenuButton.RESTART);
-        restartButton.resize(20, 10);
-        addObject(restartButton, 200, 100);
-        //addObject(new MenuButton(MenuButton.RESTART), 100, 50);
-        addObject(new MenuButton(MenuButton.QUIT), 200, 50);
-        addObject(restartButton, 685, 500);
        
         addObject(new MenuButton(MenuButton.RESTART), 685, 500);
         addObject(new MenuButton(MenuButton.QUIT), 111, 500);
         addObject(new MenuButton(MenuButton.SOUND), 700, 50);
+        
+        //creating the correct timer (stopwatch or timer)
+        if(timedMode) {
+            // 3 min timer
+            timerDisplay = new TimerDisplay(180, true);
+        } else {
+            timerDisplay = new TimerDisplay(0, false);
+        }
+        
+        addObject(timerDisplay, 600, 50);
     }
     
     /**
@@ -331,8 +348,9 @@ public class MyWorld extends World
      * called when player directly clicks the boost cell
      */
     public void applyTimerBoost(){
-        System.out.println("Boost applied!");
-        // STILL NEED OT CONNECT TO TIMERRR
+        if(timerDisplay!=null){
+            timerDisplay.addTime(15);
+        }
     }
 
     //getter for timer mode
