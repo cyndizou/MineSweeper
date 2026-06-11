@@ -20,6 +20,7 @@ public class Cell extends Button
     private int col; 
 >>>>>>> Stashed changes
     
+    //this should be correct version?
     /**
      * Constructor - creates a hidden unflagged, bombless cell
      */
