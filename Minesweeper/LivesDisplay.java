@@ -25,11 +25,11 @@ public class LivesDisplay extends Actor
      */
     private void updateImage() {
         if (faceNumber == 1) {
-            //setImage("happy.png");
+            setImage("happy.png");
         } else if (faceNumber == 2) {
-            //setImage("mid.png");
+            setImage("mid.png");
         } else if (faceNumber == 3) {
-            //setImage("sad.png");
+            setImage("sad.png");
         }
     }
     
