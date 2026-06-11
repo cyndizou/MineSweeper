@@ -110,7 +110,7 @@ public class Cell extends Button
             }
         }else if (isFlagged){
             //show flag image
-            //setImage("flag.png");
+            setImage("flag.png");
         }else{
             //default cell
             setImage("cell.png");
