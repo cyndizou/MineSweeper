@@ -349,7 +349,7 @@ public class MyWorld extends World
      */
     public void applyTimerBoost(){
         System.out.println("Boost applied!");
-        // STILL NEED OT CONNECT TO TIMERRR
+        timerDisplay.addTime(30);
     }
 
     //getter for timer mode

@@ -27,7 +27,9 @@ public class TimerDisplay extends Actor
     
     public void updateTime() {
         if(countDown) {
-            timeSeconds--;
+            if(timeSeconds > 0) {
+               timeSeconds--; 
+            }
         } else {
             timeSeconds++;
         }
