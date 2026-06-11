@@ -12,13 +12,12 @@ public class Cell extends Button
     private boolean isBomb;
     private boolean isRevealed;
     private boolean isFlagged;
+    private boolean isBoost; //for timer boost
+    private boolean floodRevealed; //to check if timer boost was revealed by flood
     private int neighborCount;
-<<<<<<< Updated upstream
-=======
     private int cellSize;
     private int row;
     private int col; 
->>>>>>> Stashed changes
     
     //this should be correct version?
     /**
@@ -97,16 +96,13 @@ public class Cell extends Button
         if(isRevealed){
             if(isBomb){
                 setImage("bomb.png");
-<<<<<<< Updated upstream
             } else if(neighborCount>0){
-=======
             }else if(isBoost && floodRevealed && world.getTimedMode()){
                 //player missed the timer boost --> show faded version
                 setImage("faded time booster.png");
             }else if(isBoost && floodRevealed == false && world.getTimedMode()){
                 setImage("time booster.png");
             }else if(neighborCount>0){
->>>>>>> Stashed changes
                 //show image with number of neighbouring bombs
                 setImage(neighborCount + ".png");
             }else{
@@ -129,6 +125,22 @@ public class Cell extends Button
     public void revealBomb(){
         isRevealed = true;
         setImage("bomb.png");
+    }
+    
+    /**
+     * sets cell sizes according to game mode
+     */
+    public void setCellSize(int cellSize){
+        this.cellSize = cellSize;
+        updateImage();
+    }
+    
+    /**
+     * sets cell position
+     */
+    public void setPosition(int row, int col){
+        this.row = row;
+        this.col = col;
     }
     
     //sets whether the cell is a bomb
@@ -159,5 +171,30 @@ public class Cell extends Button
     //returns the number of neighbouring bombs
     public int getNeighborCount(){
         return neighborCount;
+    }
+    
+    //getter for row position
+    public int getRow(){
+        return row;
+    }
+    
+    //getter for col position
+    public int getCol(){
+        return col;
+    }
+    
+    //forces the cell to reveal WITHOUT triggering another flood reveal
+    public void forceReveal(){
+        isRevealed = true;
+        floodRevealed = true; 
+        updateImage();
+    }
+    
+    public void setBoost(boolean isBoost){
+        this.isBoost = isBoost;
+    }
+    
+    public boolean getIsBoost(){
+        return isBoost;
     }
 }
