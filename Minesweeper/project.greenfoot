@@ -41,17 +41,10 @@ dependency8.type=UsesDependency
 dependency9.from=MenuButton
 dependency9.to=MyWorld
 dependency9.type=UsesDependency
-<<<<<<< Updated upstream
 editor.fx.0.height=766
 editor.fx.0.width=1294
 editor.fx.0.x=-7
 editor.fx.0.y=-7
-=======
-editor.fx.0.height=737
-editor.fx.0.width=814
-editor.fx.0.x=232
-editor.fx.0.y=4
->>>>>>> Stashed changes
 height=766
 package.numDependencies=11
 package.numTargets=11
@@ -155,9 +148,6 @@ target9.y=0
 version=3.1.0
 width=1294
 world.lastInstantiated=IntroScreen
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 xPosition=0
 yPosition=0
