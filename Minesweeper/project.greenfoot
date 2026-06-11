@@ -36,17 +36,10 @@ dependency9.from=MenuButton
 dependency9.to=CustomizationWorld
 dependency9.type=UsesDependency
 editor.fx.0.height=728
-<<<<<<< Updated upstream
-editor.fx.0.width=800
-editor.fx.0.x=320
-editor.fx.0.y=53
-height=794
-=======
 editor.fx.0.width=861
-editor.fx.0.x=288
-editor.fx.0.y=69
+editor.fx.0.x=220
+editor.fx.0.y=70
 height=751
->>>>>>> Stashed changes
 package.numDependencies=12
 package.numTargets=11
 project.charset=UTF-8
@@ -141,14 +134,7 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-<<<<<<< Updated upstream
-width=1440
-world.lastInstantiated=MyWorld
-xPosition=0
-yPosition=31
-=======
 width=1073
-world.lastInstantiated=IntroScreen
-xPosition=172
-yPosition=29
->>>>>>> Stashed changes
+world.lastInstantiated=MyWorld
+xPosition=100
+yPosition=78

@@ -344,6 +344,4 @@ public class MyWorld extends World
     public boolean isGameOver(){
         return gameOver;
     }
-    
-    
 }
