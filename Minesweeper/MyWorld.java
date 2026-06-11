@@ -348,8 +348,9 @@ public class MyWorld extends World
      * called when player directly clicks the boost cell
      */
     public void applyTimerBoost(){
-        System.out.println("Boost applied!");
-        // STILL NEED OT CONNECT TO TIMERRR
+        if(timerDisplay!=null){
+            timerDisplay.addTime(15);
+        }
     }
 
     //getter for timer mode

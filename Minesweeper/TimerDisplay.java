@@ -36,10 +36,17 @@ public class TimerDisplay extends Actor
     }
     
     private void updateImage() {
-        int minutes = timeSeconds/60;
+        int minutes = timeSeconds / 60;
         int seconds = timeSeconds % 60;
-        
-        setImage(new GreenfootImage(String.format(String.format("%d:%02d", minutes, seconds), 32, Color.WHITE, new Color (0,0,0,0))));
+    
+        String timeText = String.format("%d:%02d", minutes, seconds);
+    
+        setImage(new GreenfootImage(
+            timeText,
+            32,
+            Color.WHITE,
+            new Color(0, 0, 0, 0)
+        ));
     }
     
     public int getTime() {
