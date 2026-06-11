@@ -23,6 +23,7 @@ public class Cell extends Button
     private int row;
     private int col;
     
+    //this should be correct version?
     /**
      * Constructor - creates a hidden unflagged, bombless cell
      */
