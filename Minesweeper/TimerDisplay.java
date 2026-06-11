@@ -45,4 +45,9 @@ public class TimerDisplay extends Actor
     public int getTime() {
         return timeSeconds;
     }
+    
+    public void addTime(int seconds) {
+        timeSeconds += seconds;
+        updateImage();
+    }
 }
