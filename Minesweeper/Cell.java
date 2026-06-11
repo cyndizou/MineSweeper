@@ -98,7 +98,13 @@ public class Cell extends Button
         if(isRevealed){
             if(isBomb){
                 setImage("bomb.png");
+<<<<<<< Updated upstream
             }else if(isBoost && floodRevealed){
+=======
+            } else if(neighborCount>0){
+                setImage(neighborCount + ".png");
+            }else if(isBoost && floodRevealed && world.getTimedMode()){
+>>>>>>> Stashed changes
                 //player missed the timer boost --> show faded version
                 setImage("faded time booster.png");
             }else if(isBoost && floodRevealed == false){
