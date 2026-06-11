@@ -34,24 +34,7 @@ public class ModeButton extends Button
         
     }
     
-    /*
-    private void handleClick() {
-        CustomizationWorld world = (CustomizationWorld)getWorld();
-       
-        if(label.equals(TIMED)) {
-            world.setTimedMode(true);
-        } else if (label.equals(RELAXED)) {
-            world.setTimedMode(false);
-        } else if (label.equals(EASY)) {
-            world.setGridSize(9);
-        } else if (label.equals(HARD)) {
-            world.setGridSize(16);
-        }
-        
-        selected = !selected;
-        updateImage();
-    }
-    */
+    
    
     private void handleClick() {
         CustomizationWorld world = (CustomizationWorld)getWorld();
@@ -67,17 +50,64 @@ public class ModeButton extends Button
         }
     }
     
+    private void updateImage()
+    {
+        if(label.equals(TIMED))
+        {
+            if(selected)
+            {
+                setImage("buttons/pressed timed.png");
+            }
+            else
+            {
+                setImage("buttons/timed (1).png");
+            }
+        }
+        else if(label.equals(RELAXED))
+        {
+            if(selected)
+            {
+                setImage("buttons/pressed relaxed.png");
+            }
+            else
+            {
+                setImage("buttons/relaxed (1).png");
+            }
+        }
+        else if(label.equals(EASY))
+        {
+            if(selected)
+            {
+                setImage("buttons/pressed easy.png");
+            }
+            else
+            {
+                setImage("buttons/easy (1).png");
+            }
+        }
+        else if(label.equals(HARD))
+        {
+            if(selected)
+            {
+                setImage("buttons/pressed hard.png");
+            }
+            else
+            {
+                setImage("buttons/hard (1).png");
+            }
+        }
+    }
+    
+    /*
     private void updateImage() {
         if(label.equals(TIMED)) {
-<<<<<<< Updated upstream
-            setImage("buttons/timed.png");
+            setImage("buttons/timed (1).png");
         } else if (label.equals(RELAXED)) {
-            setImage("buttons/relaxed.png");
+            setImage("buttons/relaxed (1).png");
         } else if (label.equals(EASY)) {
-            setImage("buttons/easy1.png");
+            setImage("buttons/easy (1).png");
         } else if (label.equals(HARD)) {
-            setImage("buttons/hard.png");
-=======
+            setImage("buttons/hard (1).png");
             if(selected) {
                 setImage("buttons/pressed timed.png");
             } else {
@@ -101,9 +131,9 @@ public class ModeButton extends Button
             } else {
                 setImage("buttons/hard (1).png");
             }
->>>>>>> Stashed changes
         }
     }
+    */
     
     /*
      * Methods for adding the radio button affect.
