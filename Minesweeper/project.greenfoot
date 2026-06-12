@@ -2,20 +2,6 @@
 dependency1.from=IntroScreen
 dependency1.to=MenuButton
 dependency1.type=UsesDependency
-<<<<<<< Updated upstream
-dependency10.from=MenuButton
-dependency10.to=CustomizationWorld
-dependency10.type=UsesDependency
-dependency11.from=MenuButton
-dependency11.to=MyWorld
-dependency11.type=UsesDependency
-dependency12.from=MenuButton
-dependency12.to=InstructionWorld
-dependency12.type=UsesDependency
-dependency13.from=Cell
-dependency13.to=MyWorld
-dependency13.type=UsesDependency
-=======
 dependency10.from=MyWorld
 dependency10.to=EndWorld
 dependency10.type=UsesDependency
@@ -34,52 +20,48 @@ dependency14.type=UsesDependency
 dependency15.from=MyWorld
 dependency15.to=Item
 dependency15.type=UsesDependency
-dependency16.from=MyWorld
-dependency16.to=BoostPopup
+dependency16.from=Item
+dependency16.to=MyWorld
 dependency16.type=UsesDependency
-dependency17.from=Item
+dependency17.from=TimerBoost
 dependency17.to=MyWorld
 dependency17.type=UsesDependency
 dependency18.from=TimerBoost
-dependency18.to=MyWorld
+dependency18.to=BoostPopup
 dependency18.type=UsesDependency
-dependency19.from=TimerBoost
-dependency19.to=BoostPopup
+dependency19.from=Shield
+dependency19.to=MyWorld
 dependency19.type=UsesDependency
->>>>>>> Stashed changes
 dependency2.from=CustomizationWorld
 dependency2.to=ModeButton
 dependency2.type=UsesDependency
-dependency20.from=Shield
+dependency20.from=Radar
 dependency20.to=MyWorld
 dependency20.type=UsesDependency
-dependency21.from=Radar
-dependency21.to=MyWorld
+dependency21.from=ModeButton
+dependency21.to=CustomizationWorld
 dependency21.type=UsesDependency
-dependency22.from=ModeButton
+dependency22.from=MenuButton
 dependency22.to=CustomizationWorld
 dependency22.type=UsesDependency
 dependency23.from=MenuButton
-dependency23.to=CustomizationWorld
+dependency23.to=MyWorld
 dependency23.type=UsesDependency
 dependency24.from=MenuButton
-dependency24.to=MyWorld
+dependency24.to=InstructionWorld
 dependency24.type=UsesDependency
-dependency25.from=MenuButton
-dependency25.to=InstructionWorld
+dependency25.from=Cell
+dependency25.to=Item
 dependency25.type=UsesDependency
 dependency26.from=Cell
-dependency26.to=Item
+dependency26.to=MyWorld
 dependency26.type=UsesDependency
-dependency27.from=Cell
-dependency27.to=MyWorld
+dependency27.from=Inventory
+dependency27.to=Item
 dependency27.type=UsesDependency
 dependency28.from=Inventory
-dependency28.to=Item
+dependency28.to=MyWorld
 dependency28.type=UsesDependency
-dependency29.from=Inventory
-dependency29.to=MyWorld
-dependency29.type=UsesDependency
 dependency3.from=CustomizationWorld
 dependency3.to=MenuButton
 dependency3.type=UsesDependency
@@ -87,29 +69,9 @@ dependency4.from=MyWorld
 dependency4.to=BombCounter
 dependency4.type=UsesDependency
 dependency5.from=MyWorld
-dependency5.to=TimerDisplay
+dependency5.to=LivesDisplay
 dependency5.type=UsesDependency
 dependency6.from=MyWorld
-<<<<<<< Updated upstream
-dependency6.to=Cell
-dependency6.type=UsesDependency
-dependency7.from=MyWorld
-dependency7.to=EndWorld
-dependency7.type=UsesDependency
-dependency8.from=MyWorld
-dependency8.to=MenuButton
-dependency8.type=UsesDependency
-dependency9.from=ModeButton
-dependency9.to=CustomizationWorld
-dependency9.type=UsesDependency
-editor.fx.0.height=804
-editor.fx.0.width=1424
-editor.fx.0.x=8
-editor.fx.0.y=31
-height=751
-package.numDependencies=13
-package.numTargets=12
-=======
 dependency6.to=ShieldDisplay
 dependency6.type=UsesDependency
 dependency7.from=MyWorld
@@ -126,9 +88,8 @@ editor.fx.0.width=800
 editor.fx.0.x=320
 editor.fx.0.y=54
 height=751
-package.numDependencies=29
+package.numDependencies=28
 package.numTargets=21
->>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -144,47 +105,33 @@ readme.x=10
 readme.y=10
 simulation.speed=54
 target1.height=70
-target1.name=ModeButton
+target1.name=TimerBoost
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
 target1.x=0
 target1.y=0
 target10.height=70
-<<<<<<< Updated upstream
-target10.name=TimerDisplay
-=======
-target10.name=BoostPopup
->>>>>>> Stashed changes
+target10.name=Item
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
-<<<<<<< Updated upstream
-target11.name=Cell
-=======
-target11.name=Item
->>>>>>> Stashed changes
+target11.name=BoostPopup
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
-<<<<<<< Updated upstream
-target12.name=MyWorld
-=======
 target12.name=LivesDisplay
->>>>>>> Stashed changes
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
 target12.x=0
 target12.y=0
-<<<<<<< Updated upstream
-=======
 target13.height=70
 target13.name=IntroScreen
 target13.showInterface=false
@@ -234,9 +181,8 @@ target19.type=ClassTarget
 target19.width=120
 target19.x=0
 target19.y=0
->>>>>>> Stashed changes
 target2.height=70
-target2.name=TimerBoost
+target2.name=ModeButton
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120
@@ -278,44 +224,28 @@ target5.width=120
 target5.x=0
 target5.y=0
 target6.height=70
-<<<<<<< Updated upstream
-target6.name=IntroScreen
-=======
 target6.name=InstructionWorld
->>>>>>> Stashed changes
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
 target6.x=0
 target6.y=0
 target7.height=70
-<<<<<<< Updated upstream
-target7.name=Button
-=======
 target7.name=MenuButton
->>>>>>> Stashed changes
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
-<<<<<<< Updated upstream
-target8.name=CustomizationWorld
-=======
 target8.name=BombCounter
->>>>>>> Stashed changes
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=140
 target8.x=0
 target8.y=0
 target9.height=70
-<<<<<<< Updated upstream
-target9.name=EndWorld
-=======
 target9.name=SoundManager
->>>>>>> Stashed changes
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
@@ -323,11 +253,6 @@ target9.x=0
 target9.y=0
 version=3.1.0
 width=1073
-<<<<<<< Updated upstream
-world.lastInstantiated=IntroScreen
-xPosition=100
-=======
-world.lastInstantiated=MyWorld
+world.lastInstantiated=CustomizationWorld
 xPosition=367
->>>>>>> Stashed changes
 yPosition=78
