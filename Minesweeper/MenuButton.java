@@ -73,6 +73,12 @@ public class MenuButton extends Button
             //flip sound between on and off
             soundOn = !soundOn;
             updateImage();
+            
+            if (soundOn) {
+                SoundManager.resumeMusic();
+            } else {
+                SoundManager.pauseMusic();
+            }
         } else if (label.equals(INFO)) {
             Greenfoot.setWorld(new InstructionWorld());
         }
