@@ -186,14 +186,12 @@ public class MyWorld extends World
         midFace = new LivesDisplay(2);
         sadFace = new LivesDisplay(3);
         
-<<<<<<< Updated upstream
         //original: 300, 60
         addObject(happyFace, 225, 60);
         //original: 350, 50
         addObject(midFace, 255, 60);
         //original: 400, 50
         addObject(sadFace, 285, 60);
-=======
         addObject(happyFace, 195, 60);
         addObject(midFace, 240, 60);
         addObject(sadFace, 285, 60);
@@ -205,7 +203,6 @@ public class MyWorld extends World
         //shield
         shieldDisplay = new ShieldDisplay();
         addObject(shieldDisplay, 500, 50);
->>>>>>> Stashed changes
     }
     
     /**

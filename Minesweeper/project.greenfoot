@@ -17,6 +17,7 @@ dependency13.to=MyWorld
 dependency13.type=UsesDependency
 =======
 dependency10.from=MyWorld
+<<<<<<< Updated upstream
 dependency10.to=LivesDisplay
 dependency10.type=UsesDependency
 dependency11.from=MyWorld
@@ -35,6 +36,58 @@ dependency14.type=UsesDependency
 dependency2.from=CustomizationWorld
 dependency2.to=ModeButton
 dependency2.type=UsesDependency
+=======
+dependency10.to=Inventory
+dependency10.type=UsesDependency
+dependency11.from=MyWorld
+dependency11.to=ShieldDisplay
+dependency11.type=UsesDependency
+dependency12.from=MyWorld
+dependency12.to=ScoreManager
+dependency12.type=UsesDependency
+dependency13.from=Item
+dependency13.to=MyWorld
+dependency13.type=UsesDependency
+dependency14.from=TimerBoost
+dependency14.to=MyWorld
+dependency14.type=UsesDependency
+dependency15.from=TimerBoost
+dependency15.to=BoostPopup
+dependency15.type=UsesDependency
+dependency16.from=Shield
+dependency16.to=MyWorld
+dependency16.type=UsesDependency
+dependency17.from=Radar
+dependency17.to=MyWorld
+dependency17.type=UsesDependency
+dependency18.from=ModeButton
+dependency18.to=CustomizationWorld
+dependency18.type=UsesDependency
+dependency19.from=MenuButton
+dependency19.to=CustomizationWorld
+dependency19.type=UsesDependency
+dependency2.from=CustomizationWorld
+dependency2.to=ModeButton
+dependency2.type=UsesDependency
+dependency20.from=MenuButton
+dependency20.to=MyWorld
+dependency20.type=UsesDependency
+dependency21.from=MenuButton
+dependency21.to=InstructionWorld
+dependency21.type=UsesDependency
+dependency22.from=Cell
+dependency22.to=Item
+dependency22.type=UsesDependency
+dependency23.from=Cell
+dependency23.to=MyWorld
+dependency23.type=UsesDependency
+dependency24.from=Inventory
+dependency24.to=Item
+dependency24.type=UsesDependency
+dependency25.from=Inventory
+dependency25.to=MyWorld
+dependency25.type=UsesDependency
+>>>>>>> Stashed changes
 dependency3.from=CustomizationWorld
 dependency3.to=MenuButton
 dependency3.type=UsesDependency
@@ -46,6 +99,7 @@ dependency5.from=MyWorld
 dependency5.to=TimerDisplay
 dependency5.type=UsesDependency
 dependency6.from=MyWorld
+<<<<<<< Updated upstream
 dependency6.to=Cell
 dependency6.type=UsesDependency
 dependency7.from=MyWorld
@@ -72,12 +126,25 @@ dependency8.type=UsesDependency
 dependency9.from=MyWorld
 dependency9.to=BombCounter
 >>>>>>> Stashed changes
+=======
+dependency6.to=TimerDisplay
+dependency6.type=UsesDependency
+dependency7.from=MyWorld
+dependency7.to=Cell
+dependency7.type=UsesDependency
+dependency8.from=MyWorld
+dependency8.to=EndWorld
+dependency8.type=UsesDependency
+dependency9.from=MyWorld
+dependency9.to=MenuButton
+>>>>>>> Stashed changes
 dependency9.type=UsesDependency
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 editor.fx.0.height=728
 <<<<<<< Updated upstream
 editor.fx.0.width=800
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 editor.fx.0.x=320
 editor.fx.0.y=53
@@ -120,6 +187,13 @@ height=751
 package.numDependencies=14
 package.numTargets=15
 >>>>>>> Stashed changes
+=======
+editor.fx.0.x=315
+editor.fx.0.y=63
+height=751
+package.numDependencies=25
+package.numTargets=21
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -144,12 +218,16 @@ target1.y=0
 target10.height=70
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 target10.name=Cell
 =======
 target10.name=Button
 >>>>>>> Stashed changes
 =======
 target10.name=Button
+>>>>>>> Stashed changes
+=======
+target10.name=BoostPopup
 >>>>>>> Stashed changes
 target10.showInterface=false
 target10.type=ClassTarget
@@ -159,12 +237,16 @@ target10.y=0
 target11.height=70
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 target11.name=TimerDisplay
 =======
 target11.name=CustomizationWorld
 >>>>>>> Stashed changes
 =======
 target11.name=CustomizationWorld
+>>>>>>> Stashed changes
+=======
+target11.name=Item
 >>>>>>> Stashed changes
 target11.showInterface=false
 target11.type=ClassTarget
@@ -316,6 +398,7 @@ world.lastInstantiated=IntroScreen
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 xPosition=172
 yPosition=29
 <<<<<<< Updated upstream
@@ -331,4 +414,8 @@ yPosition=26
 =======
 xPosition=286
 yPosition=33
+>>>>>>> Stashed changes
+=======
+xPosition=208
+yPosition=32
 >>>>>>> Stashed changes
