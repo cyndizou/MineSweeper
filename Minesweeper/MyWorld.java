@@ -237,11 +237,9 @@ public class MyWorld extends World
         if (livesRemaining == 2) {
             //lose first life
             happyFace.lose();
-            resetBoard();
         } else if (livesRemaining == 1) {
             //lost second life
             midFace.lose();
-            resetBoard();
         } else if (livesRemaining == 0) {
             // lost last life - remove sad face and end game
             sadFace.lose();

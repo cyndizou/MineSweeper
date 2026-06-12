@@ -39,10 +39,10 @@ public class IntroScreen extends World
     }
     
     public void started() {
-        SoundManager.playMusic("introMusic.wav");
+        //SoundManager.playMusic("introMusic.wav");
     }
     
     public void stopped() {
-        SoundManager.pauseMusic();
+        //SoundManager.pauseMusic();
     }
 }

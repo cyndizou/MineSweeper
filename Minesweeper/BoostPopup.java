@@ -8,7 +8,7 @@ public class BoostPopup extends Actor {
     
     public BoostPopup() {
         lifetime = 120;
-        setImage("boost_popup.png");
+        //setImage("boost_popup.png");
     }
     
     public void act() {

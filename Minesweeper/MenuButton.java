@@ -75,9 +75,9 @@ public class MenuButton extends Button
             updateImage();
             
             if (soundOn) {
-                SoundManager.resumeMusic();
+                //SoundManager.resumeMusic();
             } else {
-                SoundManager.pauseMusic();
+                //SoundManager.pauseMusic();
             }
         } else if (label.equals(INFO)) {
             Greenfoot.setWorld(new InstructionWorld());
