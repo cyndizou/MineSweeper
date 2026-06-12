@@ -78,7 +78,7 @@ public class MyWorld extends World
         if(gameLost) {
             endDelay--;
             if(endDelay <= 0) {
-                Greenfoot.setWorld(new EndWorld());
+                Greenfoot.setWorld(new EndWorld(false, 0, gridSize));
             }
         }
     }
