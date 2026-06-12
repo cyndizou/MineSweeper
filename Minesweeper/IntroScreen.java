@@ -31,4 +31,17 @@ public class IntroScreen extends World
     public void act() {
         //MenuButton class handles the clicks! :)
     }
+<<<<<<< Updated upstream
+=======
+    
+    /*
+    public void started() {
+        SoundManager.playMusic("introMusic.wav");
+    }
+    
+    public void stopped() {
+        SoundManager.pauseMusic();
+    }
+    */
+>>>>>>> Stashed changes
 }

@@ -39,6 +39,7 @@ dependency9.from=ModeButton
 dependency9.to=CustomizationWorld
 dependency9.type=UsesDependency
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 editor.fx.0.height=728
 <<<<<<< Updated upstream
 editor.fx.0.width=800
@@ -67,6 +68,15 @@ height=751
 package.numDependencies=13
 package.numTargets=12
 >>>>>>> Stashed changes
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=751
+package.numDependencies=15
+package.numTargets=15
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -89,26 +99,62 @@ target1.width=120
 target1.x=0
 target1.y=0
 target10.height=70
+<<<<<<< Updated upstream
 target10.name=Cell
+=======
+target10.name=Button
+>>>>>>> Stashed changes
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
+<<<<<<< Updated upstream
 target11.name=TimerDisplay
+=======
+target11.name=CustomizationWorld
+>>>>>>> Stashed changes
 target11.showInterface=false
 target11.type=ClassTarget
-target11.width=120
+target11.width=140
 target11.x=0
 target11.y=0
 target12.height=70
+<<<<<<< Updated upstream
 target12.name=MyWorld
+=======
+target12.name=EndWorld
+>>>>>>> Stashed changes
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
 target12.x=0
 target12.y=0
+<<<<<<< Updated upstream
+=======
+target13.height=70
+target13.name=TimerDisplay
+target13.showInterface=false
+target13.type=ClassTarget
+target13.width=120
+target13.x=0
+target13.y=0
+target14.height=70
+target14.name=Cell
+target14.showInterface=false
+target14.type=ClassTarget
+target14.width=120
+target14.x=0
+target14.y=0
+target15.height=70
+target15.name=MyWorld
+target15.showInterface=false
+target15.type=ClassTarget
+target15.width=120
+target15.x=0
+target15.y=0
+>>>>>>> Stashed changes
 target2.height=70
 target2.name=ScoreManager
 target2.showInterface=false
@@ -138,28 +184,44 @@ target5.width=120
 target5.x=0
 target5.y=0
 target6.height=70
+<<<<<<< Updated upstream
 target6.name=IntroScreen
+=======
+target6.name=SoundManager
+>>>>>>> Stashed changes
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
 target6.x=0
 target6.y=0
 target7.height=70
+<<<<<<< Updated upstream
 target7.name=Button
+=======
+target7.name=BoostPopup
+>>>>>>> Stashed changes
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
+<<<<<<< Updated upstream
 target8.name=CustomizationWorld
+=======
+target8.name=LivesDisplay
+>>>>>>> Stashed changes
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=140
 target8.x=0
 target8.y=0
 target9.height=70
+<<<<<<< Updated upstream
 target9.name=EndWorld
+=======
+target9.name=IntroScreen
+>>>>>>> Stashed changes
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
@@ -178,6 +240,7 @@ yPosition=31
 width=1073
 world.lastInstantiated=IntroScreen
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 xPosition=172
 yPosition=29
 <<<<<<< Updated upstream
@@ -185,6 +248,8 @@ yPosition=29
 =======
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 xPosition=216
 yPosition=26
 >>>>>>> Stashed changes

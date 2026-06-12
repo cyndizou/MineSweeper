@@ -174,6 +174,20 @@ public class MyWorld extends World
         }
         
         addObject(timerDisplay, 600, 50);
+<<<<<<< Updated upstream
+=======
+        
+        happyFace = new LivesDisplay(1);
+        midFace = new LivesDisplay(2);
+        sadFace = new LivesDisplay(3);
+        
+        //original: 300, 60
+        addObject(happyFace, 225, 60);
+        //original: 350, 50
+        addObject(midFace, 255, 60);
+        //original: 400, 50
+        addObject(sadFace, 285, 60);
+>>>>>>> Stashed changes
     }
     
     /**
