@@ -16,12 +16,14 @@ public class Cell extends Button
     private boolean isBomb;
     private boolean isRevealed;
     private boolean isFlagged;
-    private boolean isBoost; //for timer boost
     private boolean floodRevealed; //to check if timer boost was revealed by flood
     private int neighborCount;
     private int cellSize;
     private int row;
     private int col;
+    
+    //for items
+    private Item item;
     
     //this should be correct version?
     /**
@@ -98,25 +100,14 @@ public class Cell extends Button
         if(isRevealed){
             if(isBomb){
                 setImage("bomb.png");
-            }else if(isBoost && floodRevealed){
-                setImage("faded time booster.png");
+            }else if(item!=null && floodRevealed){
+                setImage("faded " + item.getItemName() + ".png");
+            }else if(item !=null && floodRevealed == false){
+                //player clicked it directly
+                setImage(item.getItemName() + ".png");
             } else if(neighborCount>0){
                 setImage(neighborCount + ".png");
-            }else if(isBoost && floodRevealed){
-                //player missed the timer boost --> show faded version
-                MyWorld world = (MyWorld) getWorld();
-                if(world != null && world.getTimedMode()) {
-                    setImage("faded time booster.png");
-                } else {
-                    setImage("cell.png");
-                }
-            }else if(isBoost && floodRevealed == false){
-                setImage("time booster.png");
-            }else if(neighborCount>0){
-                //show image with number of neighbouring bombs
-                setImage(neighborCount + ".png");
             }else{
-                //empty cell with no neighbouring bombs
                 setImage("blank block.png");
             }
         }else if (isFlagged){
@@ -206,11 +197,12 @@ public class Cell extends Button
         updateImage();
     }
     
-    public void setBoost(boolean isBoost){
-        this.isBoost = isBoost;
+    //setter for items
+    public void setItem(Item item){
+        this.item = item;
     }
     
-    public boolean getIsBoost(){
-        return isBoost;
+    public Item getItem() {
+        return item;
     }
 }
