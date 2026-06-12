@@ -19,8 +19,6 @@ public class MyWorld extends World
     private boolean gameOver = false;
     private boolean firstClick = true;
     
-<<<<<<< Updated upstream
-=======
     //lives
     private LivesDisplay happyFace;
     private LivesDisplay midFace;
@@ -28,7 +26,6 @@ public class MyWorld extends World
     private int livesRemaining = 3;
     private ShieldDisplay shieldDisplay;
     
->>>>>>> Stashed changes
     //for mode selection
     private boolean timedMode;
     
@@ -191,8 +188,6 @@ public class MyWorld extends World
         
         //timer display
         addObject(timerDisplay, 600, 50);
-<<<<<<< Updated upstream
-=======
         
         //lives display
         happyFace = new LivesDisplay(1);
@@ -210,7 +205,6 @@ public class MyWorld extends World
         //shield
         shieldDisplay = new ShieldDisplay();
         addObject(shieldDisplay, 500, 50);
->>>>>>> Stashed changes
     }
     
     /**
@@ -255,47 +249,32 @@ public class MyWorld extends World
      * reveals all bombs on the board
      */
     private void gameOver(){
-<<<<<<< Updated upstream
-        gameOver = true;
-        for(int row = 0; row < gridSize; row++){
-            for(int col = 0; col < gridSize; col++){
-                if(grid[row][col].getIsBomb()){
-                    grid[row][col].revealBomb();
-=======
         // if shield is active, absorb the hit
-        if (shieldDisplay.isActive()) {
+        if(shieldDisplay.isActive()){
             shieldDisplay.deactivate();
-            resetBoard();
             return;
         }
-    
+        
         livesRemaining--;
-        if (livesRemaining == 2) {
+        if(livesRemaining == 2){
             happyFace.lose();
-        } else if (livesRemaining == 1) {
+        }else if(livesRemaining == 1){
             midFace.lose();
-        } else if (livesRemaining == 0) {
+        }else if(livesRemaining == 0){
             sadFace.lose();
             gameOver = true;
-            for (int row = 0; row < gridSize; row++) {
-                for (int col = 0; col < gridSize; col++) {
-                    if (grid[row][col].getIsBomb()) {
+            for(int row = 0; row < gridSize; row++){
+                for(int col = 0; col < gridSize; col++){
+                    if(grid[row][col].getIsBomb()){
                         grid[row][col].revealBomb();
                     }
->>>>>>> Stashed changes
                 }
             }
+            gameLost = true;
+            endDelay = 120;
         }
-        gameLost = true;
-        endDelay = 120;
     }
-    
-    /**
-     * randomly places items in the cells
-     */
-<<<<<<< Updated upstream
-    private void placeBoost(){
-=======
+        
     private void placeItems(){
         if (timedMode == false) {
             return;
@@ -306,7 +285,6 @@ public class MyWorld extends World
     }
     
         private void placeItemOnGrid(Item item) {
->>>>>>> Stashed changes
         boolean placed = false;
         while (placed == false) {
             int randomRow = Greenfoot.getRandomNumber(gridSize);
