@@ -43,5 +43,8 @@ public class IntroScreen extends World
         SoundManager.pauseMusic();
     }
     */
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

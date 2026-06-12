@@ -19,6 +19,13 @@ public class MyWorld extends World
     private boolean gameOver = false;
     private boolean firstClick = true;
     
+    
+    //lives
+    private LivesDisplay happyFace;
+    private LivesDisplay midFace;
+    private LivesDisplay sadFace;
+    private int livesRemaining = 3; 
+    
     //for mode selection
     private boolean timedMode;
     
@@ -174,10 +181,8 @@ public class MyWorld extends World
         }
         
         addObject(timerDisplay, 600, 50);
-<<<<<<< Updated upstream
-=======
         
-        happyFace = new LivesDisplay(1);
+        happyFace= new LivesDisplay(1);
         midFace = new LivesDisplay(2);
         sadFace = new LivesDisplay(3);
         
@@ -187,7 +192,6 @@ public class MyWorld extends World
         addObject(midFace, 255, 60);
         //original: 400, 50
         addObject(sadFace, 285, 60);
->>>>>>> Stashed changes
     }
     
     /**
@@ -224,7 +228,12 @@ public class MyWorld extends World
                 }
             }
         }
-        Greenfoot.stop();
+        
+        //For score managing
+        int finalTime = timerDisplay.getTime();
+        ScoreManager.saveScore(finalTime, gridSize);
+        
+        Greenfoot.setWorld(new EndWorld(true, finalTime, gridSize));
     }
     
     /**

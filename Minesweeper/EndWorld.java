@@ -13,7 +13,7 @@ public class EndWorld extends World
      * Constructor for objects of class EndWorld.
      * 
      */
-    public EndWorld()
+    public EndWorld(boolean won, int finalTime, int gridSize)
     {    
         super(800, 600, 1); 
         setBackground(new GreenfootImage("endScreen.png"));

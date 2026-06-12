@@ -17,7 +17,6 @@ comment13.params=startRow\ startCol
 comment13.target=void\ floodReveal(int,\ int)
 comment13.text=\n\ reveals\ all\ connected\ empty\ cells\ from\ the\ clicked\ cell\n
 comment14.params=
-<<<<<<< Updated upstream
 comment14.target=Cell[][]\ getGrid()
 comment14.text=\n\ getter\ -\ returns\ the\ grid\ array\n
 comment15.params=
@@ -26,23 +25,10 @@ comment15.text=\n\ getter\ -\ returns\ the\ grid\ size\n
 comment16.params=
 comment16.target=void\ applyTimerBoost()
 comment16.text=\n\ called\ when\ player\ directly\ clicks\ the\ boost\ cell\n
-=======
-comment14.target=void\ resetBoard()
-comment14.text=\n\ resets\ the\ board\ after\ losing\ a\ life\n\ clears\ all\ cells\ and\ replaces\ bombs\n
-comment15.params=
-comment15.target=Cell[][]\ getGrid()
-comment15.text=\n\ getter\ -\ returns\ the\ grid\ array\n
-comment16.params=
-comment16.target=int\ getGridSize()
-comment16.text=\n\ getter\ -\ returns\ the\ grid\ size\n
->>>>>>> Stashed changes
 comment17.params=
-comment17.target=void\ applyTimerBoost()
-comment17.text=\n\ called\ when\ player\ directly\ clicks\ the\ boost\ cell\n
+comment17.target=boolean\ getTimedMode()
 comment18.params=
-comment18.target=boolean\ getTimedMode()
-comment19.params=
-comment19.target=boolean\ isGameOver()
+comment18.target=boolean\ isGameOver()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
@@ -65,8 +51,4 @@ comment8.text=\n\ Called\ when\ a\ flag\ is\ placed\ or\ removed\n\ updates\ the
 comment9.params=
 comment9.target=void\ checkWin()
 comment9.text=\n\ Checks\ if\ the\ player\ has\ won\n\ win\ condition\ is\ if\ all\ non-bomb\ cells\ are\ revealed\n
-<<<<<<< Updated upstream
 numComments=19
-=======
-numComments=20
->>>>>>> Stashed changes

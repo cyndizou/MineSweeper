@@ -83,6 +83,9 @@ public class MenuButton extends Button
                 SoundManager.pauseMusic();
             }
             */
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         } else if (label.equals(INFO)) {
             Greenfoot.setWorld(new InstructionWorld());
