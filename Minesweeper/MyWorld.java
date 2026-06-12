@@ -19,27 +19,23 @@ public class MyWorld extends World
     private boolean gameOver = false;
     private boolean firstClick = true;
     
+    
     //lives
     private LivesDisplay happyFace;
     private LivesDisplay midFace;
     private LivesDisplay sadFace;
-    private int livesRemaining = 3;
-    private ShieldDisplay shieldDisplay;
+    private int livesRemaining = 3; 
     
     //for mode selection
     private boolean timedMode;
     
-    //for game over delay
+    //For game over delay
     private boolean gameLost = false;
     private int endDelay = 0;
     
     //Timer display
     private TimerDisplay timerDisplay;
     private int frameCounter;
-    
-    //item powerups & inventory
-    private Inventory inventory;
-    private boolean shieldActive = false;
     
     /**
      * Constructor - sets up the world to the user's chosen size
@@ -82,7 +78,7 @@ public class MyWorld extends World
         if(gameLost) {
             endDelay--;
             if(endDelay <= 0) {
-                Greenfoot.setWorld(new EndWorld());
+                Greenfoot.setWorld(new EndWorld(false, 0, gridSize));
             }
         }
     }
@@ -169,11 +165,9 @@ public class MyWorld extends World
      * including the bomb counter and menu buttons
      */
     private void addUI(){
-        //total bombs
         bombCounter = new BombCounter(totalBombs);
         addObject(bombCounter, 400, 50);
        
-        //buttons
         addObject(new MenuButton(MenuButton.RESTART), 685, 500);
         addObject(new MenuButton(MenuButton.QUIT), 111, 500);
         addObject(new MenuButton(MenuButton.SOUND), 700, 50);
@@ -186,17 +180,23 @@ public class MyWorld extends World
             timerDisplay = new TimerDisplay(0, false);
         }
         
-        //timer display
         addObject(timerDisplay, 600, 50);
         
-        //lives display
-        happyFace = new LivesDisplay(1);
+        happyFace= new LivesDisplay(1);
         midFace = new LivesDisplay(2);
         sadFace = new LivesDisplay(3);
         
-        addObject(happyFace, 300, 50);
-        addObject(midFace, 350, 50);
-        addObject(sadFace, 400, 50);
+<<<<<<< Updated upstream
+        //original: 300, 60
+        addObject(happyFace, 225, 60);
+        //original: 350, 50
+        addObject(midFace, 255, 60);
+        //original: 400, 50
+        addObject(sadFace, 285, 60);
+=======
+        addObject(happyFace, 195, 60);
+        addObject(midFace, 240, 60);
+        addObject(sadFace, 285, 60);
         
         //inventory
         inventory = new Inventory();
@@ -205,6 +205,7 @@ public class MyWorld extends World
         //shield
         shieldDisplay = new ShieldDisplay();
         addObject(shieldDisplay, 500, 50);
+>>>>>>> Stashed changes
     }
     
     /**
@@ -241,7 +242,12 @@ public class MyWorld extends World
                 }
             }
         }
-        Greenfoot.stop();
+        
+        //For score managing
+        int finalTime = timerDisplay.getTime();
+        ScoreManager.saveScore(finalTime, gridSize);
+        
+        Greenfoot.setWorld(new EndWorld(true, finalTime, gridSize));
     }
     
     /**
@@ -249,49 +255,28 @@ public class MyWorld extends World
      * reveals all bombs on the board
      */
     private void gameOver(){
-        // if shield is active, absorb the hit
-        if(shieldDisplay.isActive()){
-            shieldDisplay.deactivate();
-            return;
-        }
-        
-        livesRemaining--;
-        if(livesRemaining == 2){
-            happyFace.lose();
-        }else if(livesRemaining == 1){
-            midFace.lose();
-        }else if(livesRemaining == 0){
-            sadFace.lose();
-            gameOver = true;
-            for(int row = 0; row < gridSize; row++){
-                for(int col = 0; col < gridSize; col++){
-                    if(grid[row][col].getIsBomb()){
-                        grid[row][col].revealBomb();
-                    }
+        gameOver = true;
+        for(int row = 0; row < gridSize; row++){
+            for(int col = 0; col < gridSize; col++){
+                if(grid[row][col].getIsBomb()){
+                    grid[row][col].revealBomb();
                 }
             }
-            gameLost = true;
-            endDelay = 120;
         }
-    }
-        
-    private void placeItems(){
-        if (timedMode == false) {
-            return;
-        }
-        placeItemOnGrid(new TimerBoost());
-        placeItemOnGrid(new Radar());
-        placeItemOnGrid(new Shield());
+        gameLost = true;
+        endDelay = 120;
     }
     
-        private void placeItemOnGrid(Item item) {
+    /**
+     * randomly places one boost cell avoiding bombs
+     */
+    private void placeBoost(){
         boolean placed = false;
-        while (placed == false) {
+        while(placed == false){
             int randomRow = Greenfoot.getRandomNumber(gridSize);
             int randomCol = Greenfoot.getRandomNumber(gridSize);
-            if (grid[randomRow][randomCol].getIsBomb() == false &&
-                grid[randomRow][randomCol].getItem() == null) {
-                grid[randomRow][randomCol].setItem(item);
+            if(grid[randomRow][randomCol].getIsBomb() == false){
+                grid[randomRow][randomCol].setBoost(true);
                 placed = true;
             }
         }
@@ -306,7 +291,7 @@ public class MyWorld extends World
         if(firstClick){
             firstClick = false;
             placeBombs(row, col);
-            placeItems();
+            placeBoost();
             calculateNeighbors();
         }
         
@@ -318,10 +303,8 @@ public class MyWorld extends World
         
         cell.forceReveal();
         
-        if (cell.getItem() != null) {
-            Item item = cell.getItem();
-            item.collected = true;
-            inventory.addItem(item);
+        if(cell.getIsBoost()){
+            applyTimerBoost();
         }
         
         if(cell.getNeighborCount() == 0){
@@ -402,23 +385,8 @@ public class MyWorld extends World
      * called when player directly clicks the boost cell
      */
     public void applyTimerBoost(){
-        if(timerDisplay!=null){
-            timerDisplay.addTime(15);
-        }
-    }
-    
-    /**
-     * add life for shield
-     */
-    public void addLife(){
-        // restore the right face based on current lives
-        if (livesRemaining == 2) {
-            happyFace = new LivesDisplay(1);
-            addObject(happyFace, 300, 50);
-        } else if (livesRemaining == 3) {
-            midFace = new LivesDisplay(2);
-            addObject(midFace, 350, 50);
-        }
+        System.out.println("Boost applied!");
+        timerDisplay.addTime(30);
     }
 
     //getter for timer mode
@@ -431,18 +399,5 @@ public class MyWorld extends World
         return gameOver;
     }
     
-    //getter for get inventory
-    public Inventory getInventory(){
-        return inventory;
-    }
     
-    //get timer display
-    public TimerDisplay getTimerDisplay(){
-        return timerDisplay;
-    }
-    
-    //getter for shield display
-    public ShieldDisplay getShieldDisplay(){
-        return shieldDisplay;
-    }
 }
