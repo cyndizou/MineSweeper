@@ -18,6 +18,7 @@ dependency13.type=UsesDependency
 =======
 dependency10.from=MyWorld
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 dependency10.to=LivesDisplay
 dependency10.type=UsesDependency
 dependency11.from=MyWorld
@@ -51,6 +52,22 @@ dependency13.type=UsesDependency
 dependency14.from=TimerBoost
 dependency14.to=MyWorld
 dependency14.type=UsesDependency
+=======
+dependency10.to=Inventory
+dependency10.type=UsesDependency
+dependency11.from=MyWorld
+dependency11.to=ShieldDisplay
+dependency11.type=UsesDependency
+dependency12.from=MyWorld
+dependency12.to=ScoreManager
+dependency12.type=UsesDependency
+dependency13.from=Item
+dependency13.to=MyWorld
+dependency13.type=UsesDependency
+dependency14.from=TimerBoost
+dependency14.to=MyWorld
+dependency14.type=UsesDependency
+>>>>>>> Stashed changes
 dependency15.from=TimerBoost
 dependency15.to=BoostPopup
 dependency15.type=UsesDependency
@@ -87,6 +104,9 @@ dependency24.type=UsesDependency
 dependency25.from=Inventory
 dependency25.to=MyWorld
 dependency25.type=UsesDependency
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 dependency3.from=CustomizationWorld
 dependency3.to=MenuButton
@@ -99,6 +119,7 @@ dependency5.from=MyWorld
 dependency5.to=TimerDisplay
 dependency5.type=UsesDependency
 dependency6.from=MyWorld
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 dependency6.to=Cell
 dependency6.type=UsesDependency
@@ -138,12 +159,25 @@ dependency8.type=UsesDependency
 dependency9.from=MyWorld
 dependency9.to=MenuButton
 >>>>>>> Stashed changes
+=======
+dependency6.to=TimerDisplay
+dependency6.type=UsesDependency
+dependency7.from=MyWorld
+dependency7.to=Cell
+dependency7.type=UsesDependency
+dependency8.from=MyWorld
+dependency8.to=EndWorld
+dependency8.type=UsesDependency
+dependency9.from=MyWorld
+dependency9.to=MenuButton
+>>>>>>> Stashed changes
 dependency9.type=UsesDependency
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 editor.fx.0.height=728
 <<<<<<< Updated upstream
 editor.fx.0.width=800
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 editor.fx.0.x=320
@@ -191,6 +225,11 @@ package.numTargets=15
 editor.fx.0.x=315
 editor.fx.0.y=63
 height=751
+=======
+editor.fx.0.x=676
+editor.fx.0.y=58
+height=751
+>>>>>>> Stashed changes
 package.numDependencies=25
 package.numTargets=21
 >>>>>>> Stashed changes
@@ -219,12 +258,16 @@ target10.height=70
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 target10.name=Cell
 =======
 target10.name=Button
 >>>>>>> Stashed changes
 =======
 target10.name=Button
+>>>>>>> Stashed changes
+=======
+target10.name=BoostPopup
 >>>>>>> Stashed changes
 =======
 target10.name=BoostPopup
@@ -238,12 +281,16 @@ target11.height=70
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 target11.name=TimerDisplay
 =======
 target11.name=CustomizationWorld
 >>>>>>> Stashed changes
 =======
 target11.name=CustomizationWorld
+>>>>>>> Stashed changes
+=======
+target11.name=Item
 >>>>>>> Stashed changes
 =======
 target11.name=Item
@@ -399,6 +446,7 @@ world.lastInstantiated=IntroScreen
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 xPosition=172
 yPosition=29
 <<<<<<< Updated upstream
@@ -414,6 +462,10 @@ yPosition=26
 =======
 xPosition=286
 yPosition=33
+>>>>>>> Stashed changes
+=======
+xPosition=208
+yPosition=32
 >>>>>>> Stashed changes
 =======
 xPosition=208
