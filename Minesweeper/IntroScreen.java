@@ -5,6 +5,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author (your name) 
  * @version (a version number or a date)
+ * 
+ * Credits:
+ *  Background - Chatgpt
+ *  Buttons - Chatgpt
+ *  introMusic - 
+ * 
  */
 public class IntroScreen extends World
 {
@@ -30,5 +36,13 @@ public class IntroScreen extends World
     
     public void act() {
         //MenuButton class handles the clicks! :)
+    }
+    
+    public void started() {
+        SoundsManager.playMusic("introMusic.wav");
+    }
+    
+    public void stopped() {
+        SoundsManager.pauseMusic();
     }
 }
