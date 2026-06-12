@@ -19,12 +19,6 @@ public class MyWorld extends World
     private boolean gameOver = false;
     private boolean firstClick = true;
     
-    //lives
-    private LivesDisplay happyFace;
-    private LivesDisplay midFace;
-    private LivesDisplay sadFace;
-    private int livesRemaining = 3;
-    
     //for mode selection
     private boolean timedMode;
     
@@ -180,14 +174,20 @@ public class MyWorld extends World
         }
         
         addObject(timerDisplay, 600, 50);
+<<<<<<< Updated upstream
+=======
         
         happyFace = new LivesDisplay(1);
         midFace = new LivesDisplay(2);
         sadFace = new LivesDisplay(3);
         
-        addObject(happyFace, 300, 50);
-        addObject(midFace, 350, 50);
-        addObject(sadFace, 400, 50);
+        //original: 300, 60
+        addObject(happyFace, 225, 60);
+        //original: 350, 50
+        addObject(midFace, 255, 60);
+        //original: 400, 50
+        addObject(sadFace, 285, 60);
+>>>>>>> Stashed changes
     }
     
     /**
@@ -232,41 +232,22 @@ public class MyWorld extends World
      * reveals all bombs on the board
      */
     private void gameOver(){
-         livesRemaining--;
-        
-        if (livesRemaining == 2) {
-            //lose first life
-            happyFace.lose();
-            resetBoard();
-        } else if (livesRemaining == 1) {
-            //lost second life
-            midFace.lose();
-            resetBoard();
-        } else if (livesRemaining == 0) {
-            // lost last life - remove sad face and end game
-            sadFace.lose();
-            gameOver = true;
-            for (int row = 0; row < gridSize; row++) {
-                for (int col = 0; col < gridSize; col++) {
-                    if (grid[row][col].getIsBomb()) {
-                        grid[row][col].revealBomb();
-                    }
+        gameOver = true;
+        for(int row = 0; row < gridSize; row++){
+            for(int col = 0; col < gridSize; col++){
+                if(grid[row][col].getIsBomb()){
+                    grid[row][col].revealBomb();
                 }
             }
-            gameLost = true;
-            endDelay = 120;
         }
+        gameLost = true;
+        endDelay = 120;
     }
     
     /**
      * randomly places one boost cell avoiding bombs
      */
     private void placeBoost(){
-        //no timer boost in relaxed mode
-        if (timedMode == false) {
-            return; 
-        }
-            
         boolean placed = false;
         while(placed == false){
             int randomRow = Greenfoot.getRandomNumber(gridSize);
@@ -362,28 +343,6 @@ public class MyWorld extends World
         }
     }
     
-    /**
-     * resets the board after losing a life
-     * clears all cells and replaces bombs
-     */
-    private void resetBoard() {
-        //remove all existing cells from the world
-        for (int row = 0; row < gridSize; row++) {
-            for (int col = 0; col < gridSize; col++) {
-                removeObject(grid[row][col]);
-            }
-        }
-        
-        //rebuild grid
-        grid = new Cell[gridSize][gridSize];
-        initializeGrid();
-        calculateNeighbors();
-        
-        //reset flags
-        gameOver = false;
-        firstClick = true;
-    }
-    
     
     /**
      * getter - returns the grid array
@@ -403,12 +362,8 @@ public class MyWorld extends World
      * called when player directly clicks the boost cell
      */
     public void applyTimerBoost(){
-        if (timedMode) {
-            if (timerDisplay != null) {
-                timerDisplay.addTime(15);
-            }
-            addObject(new BoostPopup(), 400, 300);
-        }
+        System.out.println("Boost applied!");
+        timerDisplay.addTime(30);
     }
 
     //getter for timer mode
@@ -420,4 +375,6 @@ public class MyWorld extends World
     public boolean isGameOver(){
         return gameOver;
     }
+    
+    
 }
