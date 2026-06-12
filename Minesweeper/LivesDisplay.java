@@ -9,27 +9,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LivesDisplay extends Actor
 {
     private int faceNumber;
-    private boolean active;
+    private boolean lost;
     /**
      * Constructor
      */
     public LivesDisplay(int faceNumber) {
         this.faceNumber = faceNumber;
-        this.active = true;
+        lost = false;
         updateImage();
     }
-
     
-    /**
-     * updates the image based on remaining lives
-     */
     private void updateImage() {
-        if (faceNumber == 1) {
-            setImage("happy.png");
-        } else if (faceNumber == 2) {
-            setImage("mid.png");
-        } else if (faceNumber == 3) {
-            setImage("sad.png");
+        if (lost) {
+            if (faceNumber == 1) {
+                //setImage("faded happy.png");
+            } else if (faceNumber == 2) {
+                //setImage("faded mid.png");
+            } else {
+                //setImage("faded sad.png");
+            }
+        } else {
+            if (faceNumber == 1) {
+                setImage("happy.png");
+            } else if (faceNumber == 2) {
+                setImage("mid.png");
+            } else {
+                setImage("sad.png");
+            }
         }
     }
     
@@ -37,7 +43,7 @@ public class LivesDisplay extends Actor
      * removes this face from the screen
      */
     public void lose() {
-        active = false;
-        getWorld().removeObject(this);
+        lost = true;
+        updateImage();
     }
 }
