@@ -52,6 +52,11 @@ public class MenuButton extends Button
             //Greenfoot.setWorld(new MyWorld(9));
             //Greenfoot.setWorld(new CustomizationWorld());
             
+            if (getWorld() instanceof IntroScreen) {
+                IntroScreen intro = (IntroScreen)getWorld();
+                intro.stopped();
+            }
+            
             if(getWorld() instanceof CustomizationWorld) {
                 CustomizationWorld world = (CustomizationWorld)getWorld();
                 Greenfoot.setWorld(new MyWorld(world.getGridSize(), world.getTimedMode()));
@@ -73,6 +78,13 @@ public class MenuButton extends Button
             //flip sound between on and off
             soundOn = !soundOn;
             updateImage();
+            
+            if (soundOn) {
+                SoundManager.resumeMusic();
+            } else {
+                SoundManager.pauseMusic();
+            }
+            
         } else if (label.equals(INFO)) {
             Greenfoot.setWorld(new InstructionWorld());
         }

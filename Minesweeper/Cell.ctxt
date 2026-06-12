@@ -1,10 +1,6 @@
 #BlueJ class context
 comment0.target=Cell
-<<<<<<< Updated upstream
-comment0.text=\n\ Cell\ -\ each\ individual\ block\ that\ user\ clicks\ on\ to\ interact\n\ \n\ @Cyndi\ Zou\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n\ \n\ Credits\:\n\ -\ help\ from\ claude\ for\ neighboring\ logic\ and\ flood\ reveal\n
-=======
-comment0.text=\r\n\ Cell\ -\ each\ individual\ block\ that\ user\ clicks\ on\ to\ interact\r\n\ \r\n\ @Cyndi\ Zou\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
->>>>>>> Stashed changes
+comment0.text=\r\n\ Cell\ -\ each\ individual\ block\ that\ user\ clicks\ on\ to\ interact\r\n\ \r\n\ @Cyndi\ Zou\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n\ \r\n\ Credits\:\r\n\ -\ help\ from\ claude\ for\ neighboring\ logic\ and\ flood\ reveal\r\n
 comment1.params=
 comment1.target=Cell()
 comment1.text=\r\n\ Constructor\ -\ creates\ a\ hidden\ unflagged,\ bombless\ cell\r\n

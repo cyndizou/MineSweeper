@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Credits:
  *  Background - Chatgpt
  *  Buttons - Chatgpt
- *  introMusic - 
+ *  introMusic - downloads.khinsider.com “Minesweeper Plus - BGM Style 2”
  * 
  */
 public class IntroScreen extends World
@@ -18,6 +18,10 @@ public class IntroScreen extends World
      * Constructor for objects of class IntroScreen.
      * 
      */
+    
+    private GreenfootSound introMusic;
+    private boolean musicPlaying = true;
+    
     public IntroScreen() {
         super(800, 600, 1); 
         setBackground(new GreenfootImage("introScreen.png"));
@@ -36,5 +40,13 @@ public class IntroScreen extends World
     
     public void act() {
         //MenuButton class handles the clicks! :)
+    }
+    
+    public void started() {
+        SoundManager.playMusic("introMusic.wav");
+    }
+    
+    public void stopped() {
+        SoundManager.pauseMusic();
     }
 }
