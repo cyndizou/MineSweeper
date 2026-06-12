@@ -56,8 +56,13 @@ package.numTargets=11
 =======
 editor.fx.0.height=804
 editor.fx.0.width=1424
+<<<<<<< Updated upstream
 editor.fx.0.x=8
 editor.fx.0.y=33
+=======
+editor.fx.0.x=6
+editor.fx.0.y=156
+>>>>>>> Stashed changes
 height=751
 package.numDependencies=13
 package.numTargets=12
@@ -172,9 +177,14 @@ yPosition=31
 >>>>>>> Stashed changes
 width=1073
 world.lastInstantiated=IntroScreen
+<<<<<<< Updated upstream
 xPosition=172
 yPosition=29
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+xPosition=216
+yPosition=26
 >>>>>>> Stashed changes
