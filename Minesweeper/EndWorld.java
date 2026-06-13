@@ -16,5 +16,6 @@ public class EndWorld extends World
     {    
         super(800, 600, 1); 
         setBackground(new GreenfootImage("endScreen.png")); 
+        SoundsManager.playSound("gameEnd.wav", 75);
     }
 }
