@@ -61,6 +61,8 @@ public class MyWorld extends World
         initializeGrid();
         calculateNeighbors();
         addUI();
+        
+        SoundsManager.playMusic("gameMusic.wav");
     }
     
     public void act() {
@@ -77,6 +79,7 @@ public class MyWorld extends World
         if(gameLost) {
             endDelay--;
             if(endDelay <= 0) {
+                SoundsManager.stopMusic();
                 Greenfoot.setWorld(new EndWorld());
             }
         }
@@ -87,7 +90,6 @@ public class MyWorld extends World
         //initialize where the grid should start
         int startX = (800 - gridSize * cellSize) / 2 + cellSize / 2;
         int startY = (600 - gridSize * cellSize) / 2 + cellSize / 2 + 25;
-
     
         for (int row=0; row<gridSize; row++){
             for(int col=0; col<gridSize; col++){
@@ -237,14 +239,17 @@ public class MyWorld extends World
         if (livesRemaining == 2) {
             //lose first life
             happyFace.lose();
+            SoundsManager.playSound("livesLost.wav", 80);
             resetBoard();
         } else if (livesRemaining == 1) {
             //lost second life
             midFace.lose();
+            SoundsManager.playSound("livesLost.wav", 80);
             resetBoard();
         } else if (livesRemaining == 0) {
             // lost last life - remove sad face and end game
             sadFace.lose();
+            SoundsManager.playSound("livesLost.wav", 80);
             gameOver = true;
             for (int row = 0; row < gridSize; row++) {
                 for (int col = 0; col < gridSize; col++) {
@@ -406,6 +411,7 @@ public class MyWorld extends World
         if (timedMode) {
             if (timerDisplay != null) {
                 timerDisplay.addTime(15);
+                SoundsManager.playSound("booster.wav", 75);
             }
             addObject(new BoostPopup(), 400, 300);
         }
@@ -419,5 +425,13 @@ public class MyWorld extends World
     //game over
     public boolean isGameOver(){
         return gameOver;
+    }
+    
+    public void started() {
+        SoundsManager.playMusic("gameMusic.wav");
+    }
+    
+    public void stopped() {
+        SoundsManager.stopMusic();
     }
 }

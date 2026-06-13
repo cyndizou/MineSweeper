@@ -45,6 +45,8 @@ public class MenuButton extends Button
      * depending on what type of button it is
      */
     private void handleClick(){
+        SoundsManager.playSound("buttonClick.wav", 90);
+        
         if(label.equals(START)){
             //switch to main game world
             //commented out going to main world to bringing 
@@ -53,9 +55,11 @@ public class MenuButton extends Button
             //Greenfoot.setWorld(new CustomizationWorld());
             
             if(getWorld() instanceof CustomizationWorld) {
+                SoundsManager.stopMusic();
                 CustomizationWorld world = (CustomizationWorld)getWorld();
                 Greenfoot.setWorld(new MyWorld(world.getGridSize(), world.getTimedMode()));
             } else {
+                SoundsManager.stopMusic();
                 Greenfoot.setWorld(new CustomizationWorld());
             }
             
@@ -80,6 +84,7 @@ public class MenuButton extends Button
                 SoundsManager.pauseMusic();
             }
         } else if (label.equals(INFO)) {
+            SoundsManager.stopMusic();
             Greenfoot.setWorld(new InstructionWorld());
         }
     }

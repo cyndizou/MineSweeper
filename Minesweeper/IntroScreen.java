@@ -31,7 +31,7 @@ public class IntroScreen extends World
         addObject(new MenuButton(MenuButton.START), 400, 400);
         addObject(new MenuButton(MenuButton.SOUND), 700, 510);
         addObject(new MenuButton(MenuButton.INFO), 100, 510);
-        //addObject(new MenuButton(MenuButton.INFO), 
+        //addObject(new MenuButton(MenuButton.INFO),        
     }
     
     public void act() {
@@ -43,6 +43,6 @@ public class IntroScreen extends World
     }
     
     public void stopped() {
-        SoundsManager.pauseMusic();
+        SoundsManager.stopMusic();
     }
 }

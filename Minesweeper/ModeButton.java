@@ -37,6 +37,8 @@ public class ModeButton extends Button
     
    
     private void handleClick() {
+        SoundsManager.playSound("buttonClick.wav", 90);
+        
         CustomizationWorld world = (CustomizationWorld)getWorld();
 
         if(label.equals(TIMED) || label.equals(RELAXED))

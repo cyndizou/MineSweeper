@@ -59,7 +59,7 @@ public class Cell extends Button
      * handles left click - reveals the cell
      * does nothing if cell is already revealed or flagged
      */
-    private void handleLeftClick() {
+    private void handleLeftClick() {        
         if (isRevealed) {
             return;
         }
@@ -72,6 +72,8 @@ public class Cell extends Button
             return;
         }
         
+        SoundsManager.playSound("cellClick.wav", 100);
+
         world.handleCellClick(row, col);
     }
     
@@ -85,6 +87,8 @@ public class Cell extends Button
         }
         isFlagged = !isFlagged;
         updateImage();
+        
+        SoundsManager.playSound("flagClick.wav", 80);
         
         //tell MyWorld the flag count needs to change
         MyWorld world = (MyWorld) getWorld();
