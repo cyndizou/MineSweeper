@@ -47,6 +47,16 @@ public class CustomizationWorld extends World
         
         //add another start button to lead to game world
         addObject(new MenuButton(MenuButton.START), 400, 460);
+        
+        SoundsManager.playMusic("customizeMusic.wav");
+    }
+    
+    public void started() {
+        SoundsManager.playMusic("customizeMusic.wav");
+    }
+    
+    public void stopped() {
+        SoundsManager.stopMusic();
     }
     
     public void setTimedMode(boolean timedMode) {

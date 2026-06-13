@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EndWorld extends World
 {
-
     /**
      * Constructor for objects of class EndWorld.
      * 
@@ -16,6 +15,7 @@ public class EndWorld extends World
     public EndWorld(boolean won, int finalTime, int gridSize)
     {    
         super(800, 600, 1); 
-        setBackground(new GreenfootImage("endScreen.png"));
+        setBackground(new GreenfootImage("endScreen.png")); 
+        SoundsManager.playSound("gameEnd.wav", 75);
     }
 }

@@ -21,4 +21,12 @@ public class InstructionWorld extends World
         super(800, 600, 1); 
         setBackground(new GreenfootImage("instructionsPage2.png"));
     }
+    
+    public void started() {
+        SoundsManager.playMusic("customizeMusic.wav");
+    }
+    
+    public void stopped() {
+        SoundsManager.stopMusic();
+    }
 }
